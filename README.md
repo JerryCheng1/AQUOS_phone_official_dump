@@ -1,4 +1,4 @@
-402SH INFO
+SHARP 402SH INFO
 ===============
 
 ### cat /proc/partitions:
@@ -50,3 +50,18 @@ major   |  minor   |  #blocks  |    name       |  by-name
  179    |   32     |  4096     |   mmcblk0rpmb |
  179    |   64     |31166976   |   mmcblk1     |
  179    |   68     |31166848   |   mmcblk1p4   |
+
+### Kernel info
+  kernel         : kernel
+  ramdisk        : ramdisk
+  page size      : 2048
+  kernel size    : 8064128
+  ramdisk size   : 4444112
+  dtb size       : 215040
+  base           : 0x00000000
+  kernel offset  : 0x00008000
+  ramdisk offset : 0x01000000
+  tags offset    : 0x00000100
+  dtb img        : dt.img
+  cmd line       : androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3
+
