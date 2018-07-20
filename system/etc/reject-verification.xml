@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<!-- SHARP_EXTEND PackageManager Don't verify particular installer. [PMS-17] 2014.02.27 Start -->
+<reject-verification>
+<pkg name="jp.softbank.mb.pma" />
+<pkg name="jp.softbank.mb.uma" />
+<pkg name="jp.softbank.mb.myd.framework" />
+<pkg name="com.sprint.w.installer" />
+<pkg name="com.sprint.ce.updater"/>
+</reject-verification>
+<!-- SHARP_EXTEND PackageManager Don't verify particular installer. [PMS-17] End -->

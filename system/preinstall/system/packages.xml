@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<packages>
+    <package name="com.felicanetworks.mfm.main" codePath="/mnt/asec/com.felicanetworks.mfm.main-1/pkg.apk" resourcePath="/mnt/asec/com.felicanetworks.mfm.main-1/res.zip" nativeLibraryPath="/mnt/asec/com.felicanetworks.mfm.main-1/lib" flags="536919620" ft="23403350" it="23403efd" ut="23403efd" version="411" userId="10732">
+</package>
+    <package name="com.facebook.katana" codePath="/mnt/asec/com.facebook.katana-1/pkg.apk" resourcePath="/mnt/asec/com.facebook.katana-1/res.zip" nativeLibraryPath="/mnt/asec/com.facebook.katana-1/lib" flags="537443908" ft="fdc76458" it="fdc7e22d" ut="fdc7e22d" version="4947896" userId="10748">
+</package>
+    <package name="com.felicanetworks.mfw.a.main" codePath="/mnt/asec/com.felicanetworks.mfw.a.main-1/pkg.apk" resourcePath="/mnt/asec/com.felicanetworks.mfw.a.main-1/res.zip" nativeLibraryPath="/mnt/asec/com.felicanetworks.mfw.a.main-1/lib" flags="536919620" ft="234023b0" it="23402bd1" ut="23402bd1" version="10" userId="10702">
+</package>
+<preferred-activities>
+<item name="jp.co.sharp.android.feeluxhome/.FeelUxActivity" match="100000" set="2">
+<set name="jp.co.sharp.android.feeluxhome/.FeelUxActivity" />
+<set name="jp.co.sharp.android.home/.Launcher" />
+<filter>
+<action name="android.intent.action.MAIN" />
+<cat name="android.intent.category.HOME" />
+<cat name="android.intent.category.DEFAULT" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/gif" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/png" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/x-ms-bmp" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/jpeg" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/vnd.wap.wbmp" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/webp" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="jp.co.canon.bsd.ad.ijprinterapp/jp.co.canon.bsd.ad.pixusprint.EulaActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/jpg" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/bmp" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="application/vnd.google.panorama360+jpg" />
+</filter>
+</item>
+<item name="com.android.browser/.BrowserActivity" match="200000" set="2">
+<set name="com.android.chrome/com.google.android.apps.chrome.Main" />
+<set name="com.android.browser/.BrowserActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.BROWSABLE" />
+<cat name="android.intent.category.DEFAULT" />
+<scheme name="http" />
+<scheme name="https" />
+</filter>
+</item>
+</preferred-activities>
+
+</packages>

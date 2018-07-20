@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+<library name="jp.co.sharp.android.mpfutility"
+file="/system/framework/jp.co.sharp.android.mpfutility.jar"/>
+</permissions>
+

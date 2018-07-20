@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+** Copyright 2006, Google Inc.
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+** http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
+-->
+<!-- use empty string to specify no proxy or port -->
+<apns version="8">
+
+  <apn carrier="中国移动互联网设置" mcc="460" mnc="00" apn="cmnet" type="default" />
+  <apn carrier="中国移动互联网设置" mcc="460" mnc="02" apn="cmnet" type="default" />
+  <apn carrier="中国移动互联网设置" mcc="460" mnc="07" apn="cmnet" type="default" />
+  <apn carrier="中国移动WAP设置" mcc="460" mnc="00" apn="cmwap" proxy="10.0.0.172" port="80" type="wap" />
+  <apn carrier="中国移动WAP设置" mcc="460" mnc="02" apn="cmwap" proxy="10.0.0.172" port="80" type="wap" />
+  <apn carrier="中国移动WAP设置" mcc="460" mnc="07" apn="cmwap" proxy="10.0.0.172" port="80" type="wap" />
+  <apn carrier="中国移动彩信设置" mcc="460" mnc="00" apn="cmwap" proxy="10.0.0.172" port="80" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" type="mms" />
+  <apn carrier="中国移动彩信设置" mcc="460" mnc="02" apn="cmwap" proxy="10.0.0.172" port="80" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" type="mms" />
+  <apn carrier="中国移动彩信设置" mcc="460" mnc="07" apn="cmwap" proxy="10.0.0.172" port="80" mmsc="http://mmsc.monternet.com" mmsproxy="10.0.0.172" mmsport="80" type="mms" />
+  <apn carrier="中国联通3G互联网设置" mcc="460" mnc="01" apn="3gnet" type="default" />
+  <apn carrier="中国联通3GWAP设置" mcc="460" mnc="01" apn="3gwap" server="http://www.wo.com.cn" proxy="10.0.0.172" sport="80" type="wap" />
+  <apn carrier="中国联通3G彩信设置" mcc="460" mnc="01" apn="3gwap" mmsc="http://mmsc.myuni.com.cn" mmsproxy="10.0.0.172" mmsport="80" type="mms" />
+
+<!-- CN Cellular -->
+  <!-- modify Apn database for ChinaNet support -->
+    <apn carrier="中国电信NET设置" mcc="460" mnc="03" apn="ctnet" user="ctnet@mycdma.cn" password="vnet.mobi"   authtype="1" type="default,supl,dun" spn="中国电信" />
+	<apn carrier="中国电信NET设置" mcc="460" mnc="11" apn="ctnet" user="ctnet@mycdma.cn" password="vnet.mobi"   authtype="1" type="default,supl,dun" spn="中国电信" />
+    <apn carrier="中国电信NET设置" mcc="460" mnc="12" apn="ctnet" user="ctnet@mycdma.cn" password="vnet.mobi"   authtype="1" type="default,supl,dun" spn="中国电信" />
+    <apn carrier="中国电信NET设置" mcc="460" mnc="13" apn="ctnet" user="ctnet@mycdma.cn" password="vnet.mobi"   authtype="1" type="default,supl,dun" spn="中国电信" />
+    <apn carrier="中国电信NET设置" mcc="460" mnc="99" apn="ctnet" user="ctnet@mycdma.cn" password="vnet.mobi"   authtype="1" type="default,supl,dun" spn="中国电信" />
+    <apn carrier="中国电信NET设置" mcc="455" mnc="02" apn="ctnet" user="ctnet@mycdma.cn" password="vnet.mobi"   authtype="1" type="default,supl,dun" spn="中国电信" />
+    <apn carrier="中国电信NET设置" mcc="204" mnc="04" apn="ctnet" user="ctnet@mycdma.cn" password="vnet.mobi"   authtype="1" type="default,supl,dun" spn="中国电信" />
+    <apn carrier="中国电信NET设置" mcc="454" mnc="04" apn="ctnet" user="ctnet@mycdma.cn" password="vnet.mobi"   authtype="1" type="default,supl,dun" spn="中国电信" />
+    <apn carrier="中国电信WAP设置" mcc="460" mnc="03" apn="ctwap" user="ctwap@mycdma.cn" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsc="http://mmsc.vnet.mobi" authtype="1" type="default,supl,dun,mms" spn="中国电信" />
+	<apn carrier="中国电信WAP设置" mcc="460" mnc="11" apn="ctwap" user="ctwap@mycdma.cn" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsc="http://mmsc.vnet.mobi" authtype="1" type="default,supl,dun,mms" spn="中国电信" />
+    <apn carrier="中国电信WAP设置" mcc="460" mnc="12" apn="ctwap" user="ctwap@mycdma.cn" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsc="http://mmsc.vnet.mobi" authtype="1" type="default,supl,dun,mms" spn="中国电信" />
+    <apn carrier="中国电信WAP设置" mcc="460" mnc="13" apn="ctwap" user="ctwap@mycdma.cn" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsc="http://mmsc.vnet.mobi" authtype="1" type="default,supl,dun,mms" spn="中国电信" />
+    <apn carrier="中国电信WAP设置" mcc="460" mnc="99" apn="ctwap" user="ctwap@mycdma.cn" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsc="http://mmsc.vnet.mobi" authtype="1" type="default,supl,dun,mms" spn="中国电信" />
+    <apn carrier="中国电信WAP设置" mcc="455" mnc="02" apn="ctwap" user="ctwap@mycdma.cn" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsc="http://mmsc.vnet.mobi" authtype="1" type="default,supl,dun,mms" spn="中国电信" />
+    <apn carrier="中国电信WAP设置" mcc="204" mnc="04" apn="ctwap" user="ctwap@mycdma.cn" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsc="http://mmsc.vnet.mobi" authtype="1" type="default,supl,dun,mms" spn="中国电信" />
+    <apn carrier="中国电信WAP设置" mcc="454" mnc="04" apn="ctwap" user="ctwap@mycdma.cn" password="vnet.mobi" proxy="10.0.0.200" port="80" mmsproxy="10.0.0.200" mmsport="80" mmsc="http://mmsc.vnet.mobi" authtype="1" type="default,supl,dun,mms" spn="中国电信" />
+
+  <!-- END modify Apn database for ChinaNet support -->
+<!-- END CN Cellular -->
+
+</apns>
