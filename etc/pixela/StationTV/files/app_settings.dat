@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<!-- リモコン番号の最大値 -->
+	<entry key="MAXIMUM_REMOCON_INDEX">12</entry>
+	<!-- 受信レベルの更新周期 (ミリ秒) -->
+	<entry key="RECEPTION_REFRESH_PERIOD_IN_MILLIS">3000</entry>
+	<!-- 受信レベルの更新周期 (ミリ秒) (Tuner サービス用) -->
+	<entry key="RECEPTION_REFRESH_PERIOD_IN_MILLIS_FOR_SERVICE">3000</entry>
+	<!-- アンテナピクト1本になる受信レベルの最小値  -->
+	<entry key="RECEPTION_THRESHOLD_1">1</entry>
+	<!-- アンテナピクト2本になる受信レベルの最小値  -->
+	<entry key="RECEPTION_THRESHOLD_2">40</entry>
+	<!-- アンテナピクト3本になる受信レベルの最小値  -->
+	<entry key="RECEPTION_THRESHOLD_3">60</entry>
+	<!-- アンテナピクト4本になる受信レベルの最小値  -->
+	<entry key="RECEPTION_THRESHOLD_4">80</entry>
+	<!-- 受信レベルの最小値 (ワンセグ用)  -->
+	<entry key="RECEPTION_MINIMUM_LEVEL_FOR_ONESEG">1</entry>
+	<!-- 受信レベルの最小値 (フルセグ用)  -->
+	<entry key="RECEPTION_MINIMUM_LEVEL_FOR_FULLSEG">20</entry>
+	<!-- ワンセグ視聴中のフルセグ受信可能なレベル  -->
+	<entry key="RECEPTION_AVAILABLE_FULLSEG_LEVEL_WHEN_ONESEG">81</entry>
+	<!-- 連続録画時間 -->
+	<entry key="RESERVATION_DURATION_TIME">1440</entry>
+	<!-- 予約を登録可能な最大件数 (視聴/録画を合わせた件数) -->
+	<entry key="RESERVATION_MAX_ENTRY">30</entry>
+	<!-- 予約録画の結果を保持可能な最大件数 -->
+	<entry key="RESERVATION_RESULT_MAX_ENTRY">30</entry>
+	<!-- 予約開始までの準備期間 (秒) -->
+	<entry key="RESERVATION_PREPARATORY_PERIOD_IN_SECONDS">20</entry>
+	<!-- 録画予約の事前録画時間 (秒) -->
+	<entry key="RESERVATION_RECORDING_OFFSET_IN_SECONDS">5</entry>
+	<!-- 録画予約の事後録画時間 (秒) -->
+	<entry key="RESERVATION_RECORDING_STOP_OFFSET_IN_SECONDS">5</entry>
+	<!-- 録画予約の検証期間 (分) -->
+	<entry key="RESERVATION_RECORDING_VALIDATION_PERIOD_IN_MINUTES">5</entry>
+	<!-- 予約アラーム通知のデフォルトの表示期間 (秒) -->
+	<entry key="RESERVATION_ALARM_DEFAULT_PERIOD_IN_SECONDS">30</entry>
+	<!-- バッテリー残量による録画開始しきい値 (%) -->
+	<entry key="RECORDING_START_BATTERY_LEVEL_THRESHOLD">20</entry>
+	<!-- バッテリー残量による録画停止しきい値 (%) -->
+	<entry key="RECORDING_STOP_BATTERY_LEVEL_THRESHOLD">10</entry>
+	<!-- バッテリー残量による起動抑制しきい値 (%) -->
+	<entry key="APP_START_BATTERY_LEVEL_THRESHOLD">10</entry>
+	<!-- バッテリー残量による起動停止しきい値 (%) -->
+	<entry key="APP_FINISH_BATTERY_LEVEL_THRESHOLD">5</entry>
+	<!-- バッテリー充電中は終了しない設定フラグ -->
+	<entry key="BATTERY_CHARGING_IS_VALID">true</entry>
+	<!--  バッテリー残量によるイベント通知しきい値 (%) -->
+	<entry key="BATTERY_EVENT_PUBLISH_LEVEL">20</entry>
+	<!-- 縦画面のWebで最初に表示するURLを表します。 -->
+	<entry key="WEB_TOP_PAGE_URL">http://3sh.jp/</entry>
+	<!-- チャンネルスキャン時のモード true:ワンセグ false:フルセグ -->
+	<entry key="SCAN_SEGMENT_MODE">false</entry>
+	<!-- 予約録画時の受信感度取得までの待ち時間 (ミリ秒) -->
+	<entry key="WAIT_TIME_FOR_GETTING_RECEPTION_WHEN_RESERVING_IN_MILLIS">3000</entry>
+	<!-- 予約録画が準備中の場合、次回の録画実行までの間隔 (ミリ秒)  -->
+	<entry key="INTERVAL_IN_MILLIS_FOR_RECORDING_PREPARING">3000</entry>
+	<!-- 画面OFFライブ視聴再生有効化 true:音声有効 false:音声無効 -->
+	<entry key="POWER_OFF_MUTE">true</entry>
+	<!-- カメラ起動の有効化 true:起動有効 false:起動無効 -->
+	<entry key="ENABLE_LAUNCH_CAMERA">false</entry>
+	<!-- Bluetooth音声遅延時間(ミリ秒) -->
+	<entry key="BLUETOOTH_AUDIO_DELAY">0</entry>
+	<!-- ナビゲーションバーの幅（dip） -->
+	<entry key="NAVIGATION_BAR_WIDTH">40</entry>
+	<!-- ナビゲーションバーの高さ（dip） -->
+	<entry key="NAVIGATION_BAR_HEIGHT">0</entry>
+	<!-- アプリケーション終了時、予約録画を停止するかどうかを表します。 -->
+	<entry key="IS_STOP_RESERVATION_RECORDING_IF_APPLICATION_IS_TERMINATED">false</entry>
+	<!-- ワンセグ録画に必要なストレージ容量 (MB) を表します。 -->
+	<entry key="AVAILABLE_RECORDING_CAPACITY_IN_MEGA_BYTES">4</entry>
+	<!-- フルセグ録画に必要なストレージ容量 (MB) を表します。 -->
+	<entry key="AVAILABLE_FULL_SEG_RECORDING_CAPACITY_IN_MEGA_BYTES">150</entry>
+	<!-- 起動時のデータディレクトリ(/data)の最小空き容量(MB) を表します。 -->
+	<entry key="APP_START_DATA_MEMORY_THRESHOLD">10</entry>
+	<!-- フルセグデータサービスを選局可能にするかどうかを表します。 -->
+	<entry key="SELECTING_FULLSEG_DATA_SERVICE">true</entry>
+	<!-- APP_KEY_1を表します。 -->
+	<entry key="APP_KEY_1">FbDSBXu6ncnoOBjQ</entry>
+	<!-- APP_KEY_2を表します。 -->
+	<entry key="APP_KEY_2"></entry>
+	<!-- NIT timeout値(ミリ秒) -->
+	<entry key="NIT_TIMEOUT">4000</entry>
+	<!-- NOISY MUTE 設定：true:有効　false:無効 -->
+	<entry key="ENABLE_NOISY_MUTE">true</entry>
+	<!-- FULLSEG BML 設定：true:有効　false:無効 -->
+	<entry key="ENABLE_FULLSEG_BML">true</entry>
+	<!-- BML User-Agent のメーカーIDを表します。 (1byte整数(16進数の場合は先頭に"0x"を付ける)) -->
+	<entry key="BML_USERAGENT_MAKER_ID">0x28</entry>
+	<!-- BML User-Agent の機種名＋受信機IDを表します。 ("機種名20文字/受信機ID20文字"という構成の41文字) -->
+	<entry key="BML_USERAGENT_DEVICE_INFO">SHL25               /                    </entry>
+	<!-- BML Webブラウザ User-Agent のメーカーIDを表します。 (1byte整数(16進数の場合は先頭に"0x"を付ける), WebブラウザのUAを利用しない場合は指定しない) -->
+	<entry key="BML_COM_USERAGENT_MAKER_ID">0x11</entry>
+	<!-- BML TVSetIDで使用するメーカーIDを表します。 (1byte整数(16進数の場合は先頭に"0x"を付ける)) -->
+	<entry key="BML_TVSETID_MAKER_ID">0x28</entry>
+	<!-- miniTV起動アイコン表示有無設定 true:表示 false:非表示 -->
+	<entry key="ENABLE_START_MINITV">true</entry>
+	<!-- 録画開始時の強制的にアンテナ切替設定 true 強制的にアンテナ切替を行う false 強制的にアンテナ切替を行わない -->
+	<entry key="FORCE_CHANGE_ANTENNA_SETTING">false</entry>
+	<!-- フルセグの録画が可能かどうかを表します。 (true or false) -->
+	<entry key="ENABLE_FULLSEG_RECORDING">true</entry>
+	<!-- アンテナ機能の有効化設定  (false or 0: 無効化 / true or 1: アンテナ設定1を有効化 / 2:アンテナ設定2を有効化) -->
+	<entry key="ENABLE_ANTENNA_SETTING">true</entry>
+	<!-- 録画保存先設定の種類を表します。 (0: SD・本体 / 1: 本体のみ / 2: SD・本体(ワンセグSD非サポート) / 3: SDのみ) -->
+	<entry key="RECORD_STORE_TYPE">2</entry>
+	<!-- 動作機種のセグメント対応を表します。 (1: ワンセグのみ / 13: ワンセグ・フルセグ両対応機) -->
+	<entry key="TARGET_TYPE">13</entry>
+	<!-- CATV対応を表します。 (true: CATV対応 / false: CATV未対応) -->
+	<entry key="ENABLE_CATV">false</entry>
+	<!-- 番組予約を区別し、遅延追従を行うかどうか -->
+	<entry key="ENABLE_EVENT_RESERVATION_TRACKING">true</entry>
+	<!-- 遅延追従における終了時刻未定時の最大延長時間（分） -->
+	<entry key="RESERVATION_TRACKING_MAX_TIME_IN_MUNITES">30</entry>
+	<!-- サウンド設定が有効かどうかを表します -->
+	<entry key="ENABLE_SOUND_SETTING">true</entry>
+	<!-- バックグランド再生設定が有効かどうかを表します -->
+	<entry key="ENABLE_BACKGROUND_PLAY">false</entry>
+	<!-- バックグラウンド再生の既定値を表します -->
+	<entry key="DEFAULT_BACKGROUND_PLAY">true</entry>
+	<!-- TunerServiceメッセージ処理の監視タイムアウトの既定値を表します(ミリ秒単位) -->
+	<entry key="TUNER_SERVICE_MONITORING_TIMEOUT_MSEC">20000</entry>
+	<!-- Webブラウザのブックマーク機能が有効かどうかを表します -->
+	<entry key="ENABLE_BOOKMARK">true</entry>
+	<!-- 端末回転機能の有効化設定  (true: 有効化 / false: 無効化)  -->
+	<entry key="ENABLE_AUTO_ROTATE_SCREEN">false</entry>
+	<!-- 拡大縮小機能の有効化設定  (true: 有効化 / false: 無効化)  -->
+	<entry key="ENABLE_SCALE">false</entry>
+	<!-- ジェスチャ・フリック操作無効領域(横画面時のみ) 上辺高さ(dip) -->
+	<entry key="DISABLE_AREA_TOP_HEIGHT">25</entry>
+</properties>

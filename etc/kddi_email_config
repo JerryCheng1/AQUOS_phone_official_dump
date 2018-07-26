@@ -1,0 +1,17 @@
+﻿2.0
+[LED]
+1,0xff0000ff,サファイア,Sapphire
+2,0xffff0000,ルビー,Ruby
+3,0xff00ff00,エメラルド,Emerald
+4,0xffffff00,シトリン,Citrine
+5,0xffff00ff,アメジスト,Amethyst
+[emoji]
+emoji_display_enabled=true
+[storage]
+removable_storage_path=/storage/sdcard1
+[setting_default]
+awake_when_receive=false
+[total_message_limit]
+limit_model=small
+[logger]
+is_enabled=false
