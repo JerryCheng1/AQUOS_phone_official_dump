@@ -1,0 +1,7 @@
+mcfg_sw/generic/eu/vodafone/volte/turkey/mcfg_sw.mbn
+mcfg_sw/generic/common/row/gen_3gpp/mcfg_sw.mbn
+mcfg_sw/generic/china/cu/commerci/openmkt/mcfg_sw.mbn
+mcfg_sw/generic/eu/vodafone/volte/turkcell/mcfg_sw.mbn
+mcfg_sw/generic/eu/vodafone/volte/tt/mcfg_sw.mbn
+mcfg_sw/generic/africa/smile/gen_3gpp/mcfg_sw.mbn
+mcfg_sw/generic/eu/vodafone/volte/tele2/mcfg_sw.mbn

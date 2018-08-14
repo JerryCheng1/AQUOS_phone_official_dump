@@ -1,0 +1,315 @@
+# TODO(oonishi): Move this table to the voice data location.
+sil	sil
+あ	a
+い	i
+う	u
+え	e
+お	o
+か	k a
+き	k i
+く	k u
+け	k e
+こ	k o
+さ	s a
+し	sh i
+す	s u
+せ	s e
+そ	s o
+た	t a
+ち	ch i
+つ	ts u
+て	t e
+と	t o
+な	n a
+に	n i
+ぬ	n u
+ね	n e
+の	n o
+は	h a
+ひ	h i
+ふ	f u
+へ	h e
+ほ	h o
+ま	m a
+み	m i
+む	m u
+め	m e
+も	m o
+や	y a
+ゆ	y u
+よ	y o
+ら	r a
+り	r i
+る	r u
+れ	r e
+ろ	r o
+わ	w a
+ゐ	i
+ゑ	e
+を	o
+ん	N
+っ	Q
+ゔ	b u
+う゛	b u
+が	g a
+ぎ	g i
+ぐ	g u
+げ	g e
+ご	g o
+ざ	z a
+じ	j i
+ず	z u
+ぜ	z e
+ぞ	z o
+だ	d a
+ぢ	j i
+づ	z u
+で	d e
+ど	d o
+ば	b a
+び	b i
+ぶ	b u
+べ	b e
+ぼ	b o
+ぱ	p a
+ぴ	p i
+ぷ	p u
+ぺ	p e
+ぽ	p o
+あぇ	a
+おぇ	o
+いぇ	y e
+うぁ	w a
+うぃ	w i
+うぅ	w u
+うぇ	w e
+うぉ	w o
+きゃ	k y a
+きぃ	k y i
+きゅ	k y u
+きぇ	k y e
+きょ	k y o
+くぁ	k w a
+くぃ	k w i
+くぅ	k w u
+くぇ	k w e
+くぉ	k w o
+しゃ	sh a
+しゅ	sh u
+しぇ	sh e
+しょ	sh o
+すぃ	s i
+ちゃ	ch a
+ちゅ	ch u
+ちぇ	ch e
+ちょ	ch o
+つぁ	ts a
+つぃ	ts i
+つぇ	ts e
+つぉ	ts o
+てぃ	t i
+てゅ	t y u
+とぅ	t u
+にゃ	n y a
+にゅ	n y u
+にぇ	n y e
+にょ	n y o
+ひゃ	h y a
+ひゅ	h y u
+ひぇ	h y e
+ひょ	h y o
+ふぁ	f a
+ふぃ	f i
+ふぇ	f e
+ふぉ	f o
+ふゃ	f y a
+ふゅ	f y u
+ふょ	f y o
+みぃ	m y i
+みゃ	m y a
+みゅ	m y u
+みぇ	m y e
+みょ	m y o
+りゃ	r y a
+りゅ	r y u
+りぇ	r y e
+りょ	r y o
+るぇ	r y e
+ゔぁ	b a
+ゔぃ	b i
+ゔぇ	b e
+ゔぉ	b o
+ゔゃ	b y a
+ゔゅ	b y u
+ゔょ	b y o
+う゛ぁ	b a
+う゛ぃ	b i
+う゛ぇ	b e
+う゛ぉ	b o
+う゛ゃ	b y a
+う゛ゅ	b y u
+う゛ょ	b y o
+ぎゃ	g y a
+ぎゅ	g y u
+ぎぇ	g y e
+ぎょ	g y o
+ぐぁ	g w a
+ぐぃ	g w i
+ぐぅ	g w u
+ぐぇ	g w e
+ぐぉ	g w o
+じゃ	j a
+じゅ	j u
+じぇ	j e
+じょ	j o
+ずぃ	z i
+ぢゃ	j a
+ぢゅ	j u
+ぢぇ	j e
+ぢょ	j o
+づぁ	z a
+づぃ	z i
+づぇ	z e
+づぉ	z o
+でぃ	d i
+でゅ	d y u
+どぅ	d u
+ばぁ	b a
+びゃ	b y a
+びゅ	b y u
+びぇ	b y e
+ぶゅ	b y u
+ぼぅ	b o
+ぼぉ	b o
+びょ	b y o
+ぴゃ	p y a
+ぴゅ	p y u
+ぴぇ	p y e
+ぴょ	p y o
+むゅ	m y u
+ねゅ	n y u
+いゅ	y u
+うょ	y o
+あぁ	a
+かぁ	k a
+さぁ	s a
+たぁ	t a
+なぁ	n a
+はぁ	h a
+まぁ	m a
+やぁ	y a
+らぁ	r a
+わぁ	w a
+がぁ	g a
+ざぁ	z a
+だぁ	d a
+ぱぁ	p a
+いぃ	y i
+しぃ	sh y i
+ちぃ	ch y i
+にぃ	n y i
+ひぃ	h y i
+りぃ	r y i
+ぎぃ	g y i
+じぃ	j y i
+ぢぃ	j y i
+びぃ	b y i
+ぴぃ	p y i
+すぅ	s w u
+つぅ	ts w u
+ぬぅ	n w u
+ふぅ	f w u
+むぅ	m w u
+ゆぅ	y w u
+るぅ	r w u
+ずぅ	z w u
+づぅ	z w u
+えぇ	e
+けぇ	k e
+せぇ	s e
+てぇ	t e
+ねぇ	n e
+へぇ	h e
+めぇ	m e
+れぇ	r e
+げぇ	g e
+ぜぇ	z e
+でぇ	d e
+べぇ	b e
+ぺぇ	p e
+おぉ	o
+こぉ	k o
+そぉ	s o
+とぉ	t o
+のぉ	n o
+ほぉ	h o
+もぉ	m o
+よぉ	y o
+ろぉ	r o
+ごぉ	g o
+ぞぉ	z o
+どぉ	d o
+ぽぉ	p o
+くゎ	k w a
+おぅ	w u
+りぉ	r y o
+ろぅ	r o
+どゅ	d y u
+ぬぃ	n i
+げぃ	g i
+むぃ	m i
+れぃ	r i
+しぁ	sh a
+ぽぇ	p e
+るぃ	r i
+ずぁ	z y a
+つゃ	ts a
+きぁ	k y a
+りぁ	r y a
+ぜぃ	z i
+すゅ	sh u
+のぃ	n i
+どぁ	d y a
+いぁ	y a
+みぁ	m y a
+あぃ	i
+ぢぉ	j o
+てゃ	t y a
+かぇ	k e
+とぁ	t a
+ちぁ	ch a
+はぅ	f u
+ぽぃ	p i
+もぇ	m e
+とぇ	t e
+のぁ	n a
+えぉ	y o
+ぼぁ	b a
+めぃ	m e
+えぃ	e
+わぅ	w u
+でぉ	d y o
+こぅ	k o
+めぉ	m y o
+おぁ	w a
+こぁ	k w a
+げぉ	g y o
+むぇ	m e
+# Long vowels.  Note that they are written as vowel + long vowel mark for
+# disambiguation but they are for long vowel only (1 mora).
+あー	aa
+いー	ii
+うー	uu
+えー	ee
+おー	oo
+# Yo-on.  Sometimes written texts contains isolated yo-ons.
+ぁ	a
+ぃ	i
+ぅ	u
+ぇ	e
+ぉ	o
+ゎ	w a
+ゃ	y a
+ゅ	y u
+ょ	y o
+ゖ	k e

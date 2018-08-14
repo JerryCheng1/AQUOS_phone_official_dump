@@ -1,0 +1,4 @@
+on early-init
+    # Load loadable kernel modules
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules \
+                        shdtv_spi TunerDev

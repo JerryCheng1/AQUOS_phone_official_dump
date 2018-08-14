@@ -1,0 +1,1 @@
+/vendor/firmware/T6NE6_patch02.clf
