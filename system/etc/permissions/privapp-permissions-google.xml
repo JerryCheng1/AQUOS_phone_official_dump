@@ -91,6 +91,7 @@ It allows additional grants on top of privapp-permissions-platform.xml
         <permission name="android.permission.GET_APP_OPS_STATS"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
         <permission name="android.permission.OVERRIDE_WIFI_CONFIG"/>
+        <permission name="android.permission.PACKET_KEEPALIVE_OFFLOAD"/>
         <permission name="android.permission.SCORE_NETWORKS"/>
         <permission name="android.permission.UPDATE_APP_OPS_STATS"/>
     </privapp-permissions>
@@ -133,6 +134,7 @@ It allows additional grants on top of privapp-permissions-platform.xml
 
     <privapp-permissions package="com.google.android.dialer">
         <permission name="android.permission.ALLOW_ANY_CODEC_FOR_PLAYBACK"/>
+        <permission name="android.permission.CAPTURE_AUDIO_OUTPUT"/>
         <permission name="android.permission.CONTROL_INCALL_EXPERIENCE"/>
         <permission name="android.permission.GET_ACCOUNTS_PRIVILEGED"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
