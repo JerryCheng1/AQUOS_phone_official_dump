@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014 FUJITSU LIMITED / SHARP Corporation. All rights reserved.
+
+     when        who         what, where, why
+     ==========  ==========  =====================================================
+     2014/02/06  ono         new create
+-->
+
+<permissions>
+    <library name="jp.co.sharp.android.shfsegsave.shfsegsaveClientIF"
+            file="/system/framework/shfsegsaveClientIF.jar" />
+</permissions>

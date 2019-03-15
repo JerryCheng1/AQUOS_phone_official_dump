@@ -1,0 +1,25 @@
+#Set the Default Master Preload Applist Value
+jp.softbank.mb.softwareinformant=D
+jp.softbank.mb.manualviewer40=D
+jp.softbank.mb.manualviewerasset=D
+jp.softbank.mb.setupwizard=D
+jp.co.softbank.wispr.froyo=D
+jp.softbank.mb.mail=D
+jp.softbank.mb.vdetection=D
+jp.softbank.mb.pma=D
+jp.softbank.mb.uma=D
+jp.softbank.mb.dmb=D
+jp.softbank.mb.ichinaviclt=D
+jp.softbank.mb.dtm=D
+jp.softbank.mb.tsmproxy=D
+jp.softbank.mb.tetherAuth=D
+jp.softbank.mb.parentalcontrols=D
+jp.co.optim.orushrp00=D
+com.sprint.w.installer=D
+com.sprint.w.prefact=D
+com.mobiroo.xgen=D
+com.sprint.ce.updater=D
+jp.co.disney.apps.base.disneymarketapp=D
+jp.co.disney.apps.dm.disneyinstaller=D
+jp.softbank.mb.bhssimple=D
+jp.softbank.mb.mail.setting_general=D

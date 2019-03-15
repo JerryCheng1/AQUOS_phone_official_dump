@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<policies>
+    <admin name="jp.co.sharp.android.emopar/jp.co.sharp.android.emopar.brain.voicepf.EmoparDeviceAdminReceiver">
+        <policies flags="8" />
+    </admin>
+</policies>

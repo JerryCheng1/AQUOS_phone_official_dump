@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns>
+    <pattern id="0" value="0" visible="false" one_shot_enabled="false">
+        <names>
+            <name lang="jp">点灯</name>
+            <name lang="en">No Blink</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+
+    <pattern id="1" value="2" visible="true" one_shot_enabled="false">
+        <names>
+            <name lang="jp">パターン1</name>
+            <name lang="en">Pattern 1</name>
+        </names>
+        <funcgroups>
+            <funcgroup id="5" />
+        </funcgroups>
+    </pattern>
+
+    <pattern id="2" value="3" visible="true" one_shot_enabled="false">
+        <names>
+            <name lang="jp">パターン2</name>
+            <name lang="en">Pattern 2</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+    <pattern id="3" value="4" visible="true" one_shot_enabled="false">
+        <names>
+            <name lang="jp">パターン3</name>
+            <name lang="en">Pattern 3</name>
+        </names>
+        <funcgroups>
+            <funcgroup id="9" />
+        </funcgroups>
+    </pattern>
+    <pattern id="4" value="5" visible="true" one_shot_enabled="false">
+        <names>
+            <name lang="jp">パターン4</name>
+            <name lang="en">Pattern 4</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+    <pattern id="5" value="6" visible="true" one_shot_enabled="false">
+        <names>
+            <name lang="jp">パターン5</name>
+            <name lang="en">Pattern 5</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+    <pattern id="6" value="7" visible="true" one_shot_enabled="false">
+        <names>
+            <name lang="jp">パターン6</name>
+            <name lang="en">Pattern 6</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+    <pattern id="7" value="8" visible="true" one_shot_enabled="false">
+        <names>
+            <name lang="jp">パターン7</name>
+            <name lang="en">Pattern 7</name>
+        </names>
+        <funcgroups>
+            <funcgroup id="8" />
+        </funcgroups>
+    </pattern>
+    <pattern id="8" value="9" visible="false" one_shot_enabled="false">
+        <names>
+            <name lang="jp">お知らせ</name>
+            <name lang="en">Infomation</name>
+        </names>
+        <funcgroups>
+            <funcgroup id="10" />
+        </funcgroups>
+    </pattern>
+    <pattern id="300" value="301" visible="false" one_shot_enabled="false">
+        <names>
+            <name lang="jp">エモパターン</name>
+            <name lang="en">EmoPattern</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+</patterns>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sprint.internal.id.LauncherFacade"
+            file="/system/framework/com.sprint.internal.id.LauncherFacade.jar"/>
+</permissions>

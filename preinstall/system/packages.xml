@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<packages>
+<preferred-activities>
+<item name="jp.co.sharp.android.feeluxhome/.FeelUxActivity" match="100000" always="true" set="2">
+<set name="jp.co.sharp.android.feeluxhome/.FeelUxActivity" />
+<set name="com.google.android.googlequicksearchbox/com.google.android.launcher.GEL" />
+<filter>
+<action name="android.intent.action.MAIN" />
+<cat name="android.intent.category.HOME" />
+<cat name="android.intent.category.DEFAULT" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivityAlias" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/gif" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivityAlias" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/png" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivityAlias" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/x-ms-bmp" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivityAlias" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/jpeg" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivityAlias" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/vnd.wap.wbmp" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivityAlias" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/webp" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/jpg" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="image/bmp" />
+</filter>
+</item>
+<item name="jp.co.sharp.android.picturemanager/.media.PictureManager" match="600000" set="2">
+<set name="jp.co.sharp.android.picturemanager/.media.PictureManager" />
+<set name="com.google.android.apps.plus/.phone.HostPhotoViewIntentActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.DEFAULT" />
+<type name="application/vnd.google.panorama360+jpg" />
+</filter>
+</item>
+<item name="com.android.browser/.BrowserActivity" match="200000" set="2">
+<set name="com.android.chrome/com.google.android.apps.chrome.Main" />
+<set name="com.android.browser/.BrowserActivity" />
+<filter>
+<action name="android.intent.action.VIEW" />
+<cat name="android.intent.category.BROWSABLE" />
+<cat name="android.intent.category.DEFAULT" />
+<scheme name="http" />
+<scheme name="https" />
+</filter>
+</item>
+</preferred-activities>
+
+</packages>
