@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+<library name="jp.co.sharp.android.clearrectview"
+file="/system/framework/jp.co.sharp.android.clearrectview.jar"/>
+</permissions>
+

@@ -1,0 +1,87 @@
+####################
+#
+# Filtering Settings
+#
+####################
+
+### Filter the log output from irrelevant modules
+
+DisabledModules  = 10
+DebugLevel       = 30
+#PluginDebugLevel = 60
+
+####################
+#
+# Logging Settings
+#
+####################
+
+LogFile             = /data/DxDrm/Logs/cln
+LogcatLogs          = True
+### log the HTTP communication ###
+JavaHTTPLog         = True
+PlayReadyLog        = /data/DxDrm/Logs
+### Enable TZ logging through Platform's native method ###
+#EnableTzNativeLogs = True
+
+####################
+#
+# IV order Setting
+#
+####################
+
+#ExoPlayer = True
+#ReverseIV = True
+
+####################
+#
+# Provisioning data Settings
+#
+####################
+
+KeyFilePath            = /data/DxDrm/
+PlayReadyStorePath     = /data/DxDrm/DxPlayReadyDB.hds
+AutoProvisionPlayReady = PlayReadyEncPkg, /system/etc/shprtz_keys/DxPrdyPkgEnc
+#AutoProvisionPlayReady = PlayReady, /data/DxDrm/Credentials/PlayReady
+#SfsLocation            = /persist/data
+#EnableProfiling        = True
+
+####################
+#
+# mime type and extensions Settings
+#
+####################
+
+### MIME types and Extenstions related definitions affect the plugin
+### PIFF mime types and extensions are supported by default
+### ExcludedMimeTypes and ExcludedExtensions override all previous definitions
+
+SupportedMimeTypes      = video/avc,video/hevc,audio/mp4,video/mp4
+SecureDecoderMimeTypes  = video/avc,video/hevc
+
+#SupportAllMimeTypes     = True
+#SupportedExtensions     = .asf, .pya, .pyv, .wma, .wmv, .eny, .pye, .ismv, .isma, .playready
+#ExcludedMimeTypes       =
+#ExcludedExtensions      =
+
+#SupportedMimeTypes       = application/vnd.ms-wmdrm.lic-resp, application/vnd.ms-wmdrm.meter-chlg-req, audio/x-ms-wma, video/x-ms-wmv, video/x-ms-asf, application/vnd.ms-playready.initiator+xml, application/vnd.ms-playready.media.pyv, audio/vnd.ms-playready.media.pya, video/vnd.ms-playready.media.pyv, video/vnd.ms-playready.media.eny, application/vnd.ms-playready.lic-resp, audio/isma, video/ismv, SmoothStreaming/mp4
+
+####################
+#
+# File system location of trusted service binary. Default is /system/etc/firmware
+#
+####################
+
+#TrustedServicePath=/system/etc/firmware
+#TrustedServicePath=/vendor/firmware/discretix
+#TrustedServicePath=/firmware/image
+
+####################
+#
+# other settings
+#
+####################
+
+### uncomment this line in order to support multi-user file name translation
+
+#TranslateUserPath = True

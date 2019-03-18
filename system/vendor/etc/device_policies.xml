@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<policies>
+    <admin name="com.nttdocomo.android.remotelock/com.nttdocomo.android.remotelock.DmDeviceAdminReceiver">
+        <policies flags="13" />
+    </admin>
+    <admin name="com.nttdocomo.android.wipe/com.nttdocomo.android.wipe.DmDeviceAdminReceiver">
+        <policies flags="16" />
+    </admin>
+    <admin name="jp.co.sharp.android.emopar/jp.co.sharp.android.emopar.brain.voicepf.EmoparDeviceAdminReceiver">
+        <policies flags="8" />
+    </admin>
+</policies>

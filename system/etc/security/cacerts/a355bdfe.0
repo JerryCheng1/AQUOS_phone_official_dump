@@ -1,0 +1,71 @@
+-----BEGIN CERTIFICATE-----
+MIIDcDCCAlgCCQDvRUYuNNGqhjANBgkqhkiG9w0BAQUFADB6MQswCQYDVQQGEwJK
+UDERMA8GA1UECBMIS2FuYWdhd2ExETAPBgNVBAcTCFlva29zdWthMRMwEQYDVQQK
+EwpOVFQgRE9DT01PMRcwFQYDVQQLEw5ET0NPTU8gVEVTVCBDQTEXMBUGA1UEAxMO
+RE9DT01PIFRFU1QgQ0EwHhcNMTAwNTExMDcwMDEzWhcNMzAwNTA2MDcwMDEzWjB6
+MQswCQYDVQQGEwJKUDERMA8GA1UECBMIS2FuYWdhd2ExETAPBgNVBAcTCFlva29z
+dWthMRMwEQYDVQQKEwpOVFQgRE9DT01PMRcwFQYDVQQLEw5ET0NPTU8gVEVTVCBD
+QTEXMBUGA1UEAxMORE9DT01PIFRFU1QgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IB
+DwAwggEKAoIBAQDA7gBqWrX7KKLhOO9ei5LACHA5FXw6n7eqKqzJZ+WMhI3ivQ+0
+UQ2D1WwS6OvEEJ2gygBfmcB+vXgJrdBwN4+Wvjy0Ry6jMPxWB1GedlPv4BdduasP
+p7UfNeTIfPjGBEKCbzZe7/PMgKYstmSXcA+YI75e95uKPiu7hSkRgPWPeOtZMRLQ
+uq+tFDADY/uq9JI48F13UiC+Z/jfrS55tTEo6GrBeJmyyFBns4F8qLFgwbkyn/7u
+rYrXX9CIAJHuZlrD2Kzr3bqUObdwL1R1Z6b/QSRuGsGJshDo/nMiz9kKckzbJlaw
+VFFKBnYLUzKx2eBj7CxX0drRuf6n31vxrLqZAgMBAAEwDQYJKoZIhvcNAQEFBQAD
+ggEBAHJafarnE6pswIhVC/5MpPGI8efnz3RRJfON11PuwC+dmQe+VUl3f0lCalMm
+ilFWI9SqwyI832/C2dYLvCD7NhUEDML/GgMyhVEZdwaJRJTyYxbJEPQme7orRiU7
+Ttbe8VJhDZVIq0g2O23y4pGruvNVBHBDmpSmmPj3h18MwFbggJ3EYVK7jiQ+f+yO
+ForKeSotgTk2tkMghYQpLSlcxqjAUVGf86j27AO3hjSO+sptVKeLsMQQeg4abflt
+iQAr0QnAYg9AptrIGco6G2n9NXGsYlcgwQnk6WnNU5WXvGj+G7KORwAUwY2zI40J
+GpBtlXwzUDYpu1IWhjdCVWW+K7o=
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number:
+            ef:45:46:2e:34:d1:aa:86
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=JP, ST=Kanagawa, L=Yokosuka, O=NTT DOCOMO, OU=DOCOMO TEST CA, CN=DOCOMO TEST CA
+        Validity
+            Not Before: May 11 07:00:13 2010 GMT
+            Not After : May  6 07:00:13 2030 GMT
+        Subject: C=JP, ST=Kanagawa, L=Yokosuka, O=NTT DOCOMO, OU=DOCOMO TEST CA, CN=DOCOMO TEST CA
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (2048 bit)
+                Modulus (2048 bit):
+                    00:c0:ee:00:6a:5a:b5:fb:28:a2:e1:38:ef:5e:8b:
+                    92:c0:08:70:39:15:7c:3a:9f:b7:aa:2a:ac:c9:67:
+                    e5:8c:84:8d:e2:bd:0f:b4:51:0d:83:d5:6c:12:e8:
+                    eb:c4:10:9d:a0:ca:00:5f:99:c0:7e:bd:78:09:ad:
+                    d0:70:37:8f:96:be:3c:b4:47:2e:a3:30:fc:56:07:
+                    51:9e:76:53:ef:e0:17:5d:b9:ab:0f:a7:b5:1f:35:
+                    e4:c8:7c:f8:c6:04:42:82:6f:36:5e:ef:f3:cc:80:
+                    a6:2c:b6:64:97:70:0f:98:23:be:5e:f7:9b:8a:3e:
+                    2b:bb:85:29:11:80:f5:8f:78:eb:59:31:12:d0:ba:
+                    af:ad:14:30:03:63:fb:aa:f4:92:38:f0:5d:77:52:
+                    20:be:67:f8:df:ad:2e:79:b5:31:28:e8:6a:c1:78:
+                    99:b2:c8:50:67:b3:81:7c:a8:b1:60:c1:b9:32:9f:
+                    fe:ee:ad:8a:d7:5f:d0:88:00:91:ee:66:5a:c3:d8:
+                    ac:eb:dd:ba:94:39:b7:70:2f:54:75:67:a6:ff:41:
+                    24:6e:1a:c1:89:b2:10:e8:fe:73:22:cf:d9:0a:72:
+                    4c:db:26:56:b0:54:51:4a:06:76:0b:53:32:b1:d9:
+                    e0:63:ec:2c:57:d1:da:d1:b9:fe:a7:df:5b:f1:ac:
+                    ba:99
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: sha1WithRSAEncryption
+        72:5a:7d:aa:e7:13:aa:6c:c0:88:55:0b:fe:4c:a4:f1:88:f1:
+        e7:e7:cf:74:51:25:f3:8d:d7:53:ee:c0:2f:9d:99:07:be:55:
+        49:77:7f:49:42:6a:53:26:8a:51:56:23:d4:aa:c3:22:3c:df:
+        6f:c2:d9:d6:0b:bc:20:fb:36:15:04:0c:c2:ff:1a:03:32:85:
+        51:19:77:06:89:44:94:f2:63:16:c9:10:f4:26:7b:ba:2b:46:
+        25:3b:4e:d6:de:f1:52:61:0d:95:48:ab:48:36:3b:6d:f2:e2:
+        91:ab:ba:f3:55:04:70:43:9a:94:a6:98:f8:f7:87:5f:0c:c0:
+        56:e0:80:9d:c4:61:52:bb:8e:24:3e:7f:ec:8e:16:8a:ca:79:
+        2a:2d:81:39:36:b6:43:20:85:84:29:2d:29:5c:c6:a8:c0:51:
+        51:9f:f3:a8:f6:ec:03:b7:86:34:8e:fa:ca:6d:54:a7:8b:b0:
+        c4:10:7a:0e:1a:6d:f9:6d:89:00:2b:d1:09:c0:62:0f:40:a6:
+        da:c8:19:ca:3a:1b:69:fd:35:71:ac:62:57:20:c1:09:e4:e9:
+        69:cd:53:95:97:bc:68:fe:1b:b2:8e:47:00:14:c1:8d:b3:23:
+        8d:09:1a:90:6d:95:7c:33:50:36:29:bb:52:16:86:37:42:55:
+        65:be:2b:ba

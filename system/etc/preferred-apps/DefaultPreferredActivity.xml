@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<preferred-activities>
+<item name="com.google.android.googlequicksearchbox/.SearchActivity" match="100000" always="true" set="2">
+<set name="com.nttdocomo.android.mascot/.application.MascotApplicationProxy" />
+<set name="com.google.android.googlequicksearchbox/.SearchActivity" />
+<filter>
+<action name="android.intent.action.ASSIST" />
+<cat name="android.intent.category.DEFAULT" />
+</filter>
+</item>
+</preferred-activities>

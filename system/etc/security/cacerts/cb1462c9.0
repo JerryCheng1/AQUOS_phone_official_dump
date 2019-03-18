@@ -1,0 +1,49 @@
+-----BEGIN CERTIFICATE-----
+MIICZzCCAdACCQDVC72VrN8A8jANBgkqhkiG9w0BAQUFADB4MQswCQYDVQQGEwJK
+UDERMA8GA1UECBMIS2FuYWdhd2ExETAPBgNVBAcTCFlva29zdWthMRMwEQYDVQQK
+EwpOVFQgRE9DT01PMRcwFQYDVQQLEw5ET0NPTU8gVGVzdCBDQTEVMBMGA1UEAxMM
+VGVzdCBDQSAxMDI0MB4XDTEwMDgzMDAzMTAwMVoXDTMwMDgyNTAzMTAwMVoweDEL
+MAkGA1UEBhMCSlAxETAPBgNVBAgTCEthbmFnYXdhMREwDwYDVQQHEwhZb2tvc3Vr
+YTETMBEGA1UEChMKTlRUIERPQ09NTzEXMBUGA1UECxMORE9DT01PIFRlc3QgQ0Ex
+FTATBgNVBAMTDFRlc3QgQ0EgMTAyNDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkC
+gYEAvaZyEh8E8k3mXd7l3fJJeg3MAXiLSXkfmy5RkFPNS2ml/VEWRSy6nIbwhq7Q
+NEWWzFk6Tl6Kc5uc1C2t6CDpiRya7xadtIOKRekdscu8r78jqrXejeLw/xWN7klv
+gS2FpsDzBCy6iYEs+pcclSBb99E6LelPiUsF5btGjS0MAjECAwEAATANBgkqhkiG
+9w0BAQUFAAOBgQAy/gzhU6L4uYiRrG825+xcx7CI+U2/FWro8YXjf0sB2ADmOX7X
+6yujQ2mzkjMKhwk3dsB+NtuIhSLmJ6IEqLrxoypk4EETpB9sJ1KvglOLj4Rh2/iM
+8Bol6F4UITkHFaVx+IW+dEDHZ52WOA/4up4/UQCg3V0T5bbWAYgVK3A4uA==
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number:
+            d5:0b:bd:95:ac:df:00:f2
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=JP, ST=Kanagawa, L=Yokosuka, O=NTT DOCOMO, OU=DOCOMO Test CA, CN=Test CA 1024
+        Validity
+            Not Before: Aug 30 03:10:01 2010 GMT
+            Not After : Aug 25 03:10:01 2030 GMT
+        Subject: C=JP, ST=Kanagawa, L=Yokosuka, O=NTT DOCOMO, OU=DOCOMO Test CA, CN=Test CA 1024
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:bd:a6:72:12:1f:04:f2:4d:e6:5d:de:e5:dd:f2:
+                    49:7a:0d:cc:01:78:8b:49:79:1f:9b:2e:51:90:53:
+                    cd:4b:69:a5:fd:51:16:45:2c:ba:9c:86:f0:86:ae:
+                    d0:34:45:96:cc:59:3a:4e:5e:8a:73:9b:9c:d4:2d:
+                    ad:e8:20:e9:89:1c:9a:ef:16:9d:b4:83:8a:45:e9:
+                    1d:b1:cb:bc:af:bf:23:aa:b5:de:8d:e2:f0:ff:15:
+                    8d:ee:49:6f:81:2d:85:a6:c0:f3:04:2c:ba:89:81:
+                    2c:fa:97:1c:95:20:5b:f7:d1:3a:2d:e9:4f:89:4b:
+                    05:e5:bb:46:8d:2d:0c:02:31
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: sha1WithRSAEncryption
+        32:fe:0c:e1:53:a2:f8:b9:88:91:ac:6f:36:e7:ec:5c:c7:b0:
+        88:f9:4d:bf:15:6a:e8:f1:85:e3:7f:4b:01:d8:00:e6:39:7e:
+        d7:eb:2b:a3:43:69:b3:92:33:0a:87:09:37:76:c0:7e:36:db:
+        88:85:22:e6:27:a2:04:a8:ba:f1:a3:2a:64:e0:41:13:a4:1f:
+        6c:27:52:af:82:53:8b:8f:84:61:db:f8:8c:f0:1a:25:e8:5e:
+        14:21:39:07:15:a5:71:f8:85:be:74:40:c7:67:9d:96:38:0f:
+        f8:ba:9e:3f:51:00:a0:dd:5d:13:e5:b6:d6:01:88:15:2b:70:
+        38:b8

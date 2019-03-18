@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<patterns>
+    <pattern id="9" value="66050" >
+        <names>
+            <name lang="jp">クリスタル</name>
+            <name lang="en">Crystal</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+    <pattern id="1" value="65536">
+        <names>
+            <name lang="jp">ルビー</name>
+            <name lang="en">Ruby</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+     </pattern>
+    <pattern id="2" value="256" >
+        <names>
+            <name lang="jp">エメラルド</name>
+            <name lang="en">Emerald</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+    <pattern id="3" value="1" >
+        <names>
+            <name lang="jp">サファイア</name>
+            <name lang="en">Sapphire</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+    <pattern id="4" value="65792" >
+        <names>
+            <name lang="jp">シトリン</name>
+            <name lang="en">Citrine</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+    <pattern id="5" value="65537" >
+        <names>
+            <name lang="jp">アメジスト</name>
+            <name lang="en">Amethyst</name>
+        </names>
+        <funcgroups>
+            <funcgroup id="10" />
+        </funcgroups>
+    </pattern>
+    <pattern id="8" value="131329" >
+        <names>
+            <name lang="jp">ピンクオパール</name>
+            <name lang="en">Pink opal</name>
+        </names>
+        <funcgroups>
+            <funcgroup id="9" />
+        </funcgroups>
+    </pattern>
+    <pattern id="6" value="257" >
+        <names>
+            <name lang="jp">アクアマリン</name>
+            <name lang="en">Aquamarine</name>
+            </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+    <pattern id="7" value="65793" >
+        <names>
+            <name lang="jp">プリズム</name>
+            <name lang="en">Prism</name>
+        </names>
+        <funcgroups>
+        </funcgroups>
+    </pattern>
+</patterns>

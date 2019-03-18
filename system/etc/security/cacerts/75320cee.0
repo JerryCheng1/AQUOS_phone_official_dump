@@ -1,0 +1,58 @@
+-----BEGIN CERTIFICATE-----
+MIIClDCCAf2gAwIBAgIJAMEX4WSOf7yfMA0GCSqGSIb3DQEBBQUAMGMxCzAJBgNV
+BAYTAkpQMREwDwYDVQQIDAhLYW5hZ2F3YTETMBEGA1UECgwKTlRUIERPQ09NTzEO
+MAwGA1UECwwFS1MtVDExHDAaBgNVBAMME3Rlc3RDQS5kb2NvbW8ubmUuanAwHhcN
+MTEwNzIyMDQyNDE3WhcNMTQwNzIxMDQyNDE3WjBjMQswCQYDVQQGEwJKUDERMA8G
+A1UECAwIS2FuYWdhd2ExEzARBgNVBAoMCk5UVCBET0NPTU8xDjAMBgNVBAsMBUtT
+LVQxMRwwGgYDVQQDDBN0ZXN0Q0EuZG9jb21vLm5lLmpwMIGfMA0GCSqGSIb3DQEB
+AQUAA4GNADCBiQKBgQC93maA+uHoBX3EHsOrw98EaBDBnw4vQq+1AIQ2hqOzQ4Gt
+Uj8H1VghnfC/eb989AV+UOZjEU+v8/XUwDRPhOb1nQ/8pcVx8Qm6+qkwvorMiaBS
+vWPOD1KrnN8Sw5qAT+HVdn9H8/IOypMrEbCZg2R+ylQsOqHvKu5aHHIORyMCRwID
+AQABo1AwTjAdBgNVHQ4EFgQUPHoS4pkSdWkWFpyd1eLNon1BSEwwHwYDVR0jBBgw
+FoAUPHoS4pkSdWkWFpyd1eLNon1BSEwwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0B
+AQUFAAOBgQC1AicGmrvzFHuM0T4MvK48atgH5/xCFIsdJgOeadrMUqthm9ujcVCN
+JobQdJnd18rLe4uCl4tsSWy0vz9zuMQR8whuavLhNmfA8Gdck14xhM0vUxywQutX
+AKQVqUk6Q5z8KdkrUS8rQTVvlSHU//NwSPpks9Hp1O7moAYuR4fmmQ==
+-----END CERTIFICATE-----
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            c1:17:e1:64:8e:7f:bc:9f
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=JP, ST=Kanagawa, O=NTT DOCOMO, OU=KS-T1, CN=testCA.docomo.ne.jp
+        Validity
+            Not Before: Jul 22 04:24:17 2011 GMT
+            Not After : Jul 21 04:24:17 2014 GMT
+        Subject: C=JP, ST=Kanagawa, O=NTT DOCOMO, OU=KS-T1, CN=testCA.docomo.ne.jp
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:bd:de:66:80:fa:e1:e8:05:7d:c4:1e:c3:ab:c3:
+                    df:04:68:10:c1:9f:0e:2f:42:af:b5:00:84:36:86:
+                    a3:b3:43:81:ad:52:3f:07:d5:58:21:9d:f0:bf:79:
+                    bf:7c:f4:05:7e:50:e6:63:11:4f:af:f3:f5:d4:c0:
+                    34:4f:84:e6:f5:9d:0f:fc:a5:c5:71:f1:09:ba:fa:
+                    a9:30:be:8a:cc:89:a0:52:bd:63:ce:0f:52:ab:9c:
+                    df:12:c3:9a:80:4f:e1:d5:76:7f:47:f3:f2:0e:ca:
+                    93:2b:11:b0:99:83:64:7e:ca:54:2c:3a:a1:ef:2a:
+                    ee:5a:1c:72:0e:47:23:02:47
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier:
+                3C:7A:12:E2:99:12:75:69:16:16:9C:9D:D5:E2:CD:A2:7D:41:48:4C
+            X509v3 Authority Key Identifier:
+                keyid:3C:7A:12:E2:99:12:75:69:16:16:9C:9D:D5:E2:CD:A2:7D:41:48:4C
+
+            X509v3 Basic Constraints:
+                CA:TRUE
+    Signature Algorithm: sha1WithRSAEncryption
+        b5:02:27:06:9a:bb:f3:14:7b:8c:d1:3e:0c:bc:ae:3c:6a:d8:
+        07:e7:fc:42:14:8b:1d:26:03:9e:69:da:cc:52:ab:61:9b:db:
+        a3:71:50:8d:26:86:d0:74:99:dd:d7:ca:cb:7b:8b:82:97:8b:
+        6c:49:6c:b4:bf:3f:73:b8:c4:11:f3:08:6e:6a:f2:e1:36:67:
+        c0:f0:67:5c:93:5e:31:84:cd:2f:53:1c:b0:42:eb:57:00:a4:
+        15:a9:49:3a:43:9c:fc:29:d9:2b:51:2f:2b:41:35:6f:95:21:
+        d4:ff:f3:70:48:fa:64:b3:d1:e9:d4:ee:e6:a0:06:2e:47:87:
+        e6:99

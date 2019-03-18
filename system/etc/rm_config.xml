@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /*
+ * Copyright (C) 2009 SHARP Corporation.  All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */ -->
+<RmManagementConfigFile>
+    <!-- Software Version -->
+        <rm_swversion>1.5</rm_swversion>                        <!-- RM Software Version -->
+
+    <!-- Setting value setting -->
+        <rm_data_path>/data/data/jp.co.sharp.android.rmman/files</rm_data_path>
+                                                                <!-- Temporary storage (FullPATH) -->
+        <server_ipaddress>60.45.238.100</server_ipaddress>      <!-- RMserver IP Address -->
+        <server_port>80</server_port>                           <!-- RMserver Port init -->
+        <server_path>/upload/postupup2.cgi</server_path>        <!-- RMserver Path init -->
+
+    <!-- Limit value setting -->
+        <battery_repose_limit>5</battery_repose_limit>          <!-- Battery level operation stop Less than % (1~100) -->
+        <want_capacity>10485760</want_capacity>                 <!-- Free space required (byte) -->
+
+    <!-- Run trigger setting -->
+        <server_trigger>1</server_trigger>                      <!-- Server   0(invalid)/1(valid) -->
+        <device_trigger>1</device_trigger>                      <!-- Device   0(invalid)/1(valid) -->
+        <timer_trigger>1</timer_trigger>                        <!-- Timer    0(invalid)/1(valid) -->
+        <abnormal_trigger>0</abnormal_trigger>                  <!-- Abnormal 0(invalid)/1(valid) -->
+        <while_trigger>1</while_trigger>                        <!-- While    0(invalid)/1(valid) -->
+
+    <!-- Data acquisition -->
+        <reset_log>1</reset_log>                                <!-- ResetLog 0(invalid)/1(valid) -->
+        <reset_logname>DYINGLOG_0.dat</reset_logname>           <!-- ResetLog FileName -->
+
+<!-- [RmMan001]QualcommLogs Hide DEL Start -->
+<!--    <qualcomm_log>0</qualcomm_log> -->                      <!-- QualcommLog 0(invalid)/1(valid) -->
+<!--    <qualcomm_logname>qualcomm.log</qualcomm_logname> -->   <!-- QualcommLog FileName -->
+<!-- [RmMan001]QualcommLogs Hide DEL End -->
+
+        <linux_log>1</linux_log>                                <!-- KernelLog 0(invalid)/1(valid) -->
+        <linux_logname>kernel_log.txt</linux_logname>           <!-- KernelLog FileName -->
+
+        <android_main_log>1</android_main_log>                  <!-- AndroidMainLog 0(invalid)/1(valid) -->
+        <android_main_logname>logcat.txt</android_main_logname> <!-- AndroidMainLog FileName -->
+
+        <android_radio_log>1</android_radio_log>                <!-- AndroidRadioLog 0(invalid)/1(valid) -->
+        <android_radio_logname>logcat_radio.txt</android_radio_logname>
+                                                                <!-- AndroidRadioLog FileName -->
+
+        <android_events_log>1</android_events_log>              <!-- AndroidEventsLog 0(invalid)/1(valid) -->
+        <android_events_logname>logcat_events.txt</android_events_logname>
+                                                                <!-- AndroidEventsLog FileName -->
+
+        <batt_temp_log>1</batt_temp_log>                        <!-- BattTempLog 0(invalid)/1(valid) -->
+        <batt_temp_logname1>battlog.txt</batt_temp_logname1>    <!-- BattTempLog1 FileName -->
+        <batt_temp_logname2>battlog_offchg.txt</batt_temp_logname2>
+                                                                <!-- BattTempLog2 FileName -->
+
+        <traces_log>1</traces_log>                              <!-- TracesLog 0(invalid)/1(valid) -->
+        <traces_logname>traces.txt</traces_logname>             <!-- TracesLog FileName -->
+
+        <app_inst_log>1</app_inst_log>                          <!-- AppInstLog 0(invalid)/1(valid) -->
+        <app_inst_logname>applog.txt</app_inst_logname>         <!-- AppInstLog FileName -->
+
+        <sleep_log>1</sleep_log>                                <!-- SleepLog 0(invalid)/1(valid) -->
+        <sleep_logname1>SLEEPLOG_A.dat</sleep_logname1>         <!-- SleepLog1 FileName -->
+        <sleep_logname2>SLEEPLOG_MAP_A.dat</sleep_logname2>     <!-- SleepLog2 FileName -->
+        <sleep_logname3>SLEEPLOG_B.dat</sleep_logname3>         <!-- SleepLog3 FileName -->
+        <sleep_logname4>SLEEPLOG_MAP_B.dat</sleep_logname4>     <!-- SleepLog4 FileName -->
+        <sleep_logname5>SLEEPLOG_K.dat</sleep_logname5>         <!-- SleepLog5 FileName -->
+
+        <shdisp_log>1</shdisp_log>                              <!-- SHDispLog 0(invalid)/1(valid) -->
+        <shdisp_logname>displaylog.txt</shdisp_logname>         <!-- SHDispLog FileName -->
+
+        <ramdump_log>1</ramdump_log>                                       <!-- RamdumpLog 0(invalid)/1(valid) -->
+        <ramdump_logname1>ramdump_modem_{0-9}+.elf</ramdump_logname1>      <!-- RamdumpLog1 FileName -->
+        <ramdump_logname2>ramdump_smem-modem_{0-9}+.elf</ramdump_logname2> <!-- RamdumpLog2 FileName -->
+        <ramdump_logname3>ramdump_smem_{0-9}+.elf</ramdump_logname3>       <!-- RamdumpLog3 FileName -->
+
+        <screenshot_file>1</screenshot_file>                    <!-- ScreenShot 0(invalid)/1(valid) -->
+        <screenshot_filename>screenshot.png</screenshot_filename>
+                                                                <!-- ScreenShot FileName -->
+
+        <call_log>1</call_log>                                  <!-- CallLog 0(invalid)/1(valid) -->
+        <call_logname>phone_log.txt</call_logname>              <!-- CallLog FileName -->
+
+        <config_file>1</config_file>                            <!-- ConfigFile 0(invalid)/1(valid) -->
+        <config_filename>rm_config.xml</config_filename>        <!-- ConfigFile FileName -->
+
+        <statusinfo_file>1</statusinfo_file>                    <!-- StatusInfoFile 0(invalid)/1(valid) -->
+        <statusinfo_filename>statusinfo.txt</statusinfo_filename>
+                                                                <!-- StatusInfoFile FileName  -->
+
+        <bugreport_log>1</bugreport_log>                        <!-- bugreportLog 0(invalid)/1(valid) -->
+        <bugreport_logname>bugreportlog.txt</bugreport_logname><!-- BugreportLog FileName -->
+
+    <!-- Exec command -->
+    <!--  *make sure that does not result in an error in the shell to run beforehand -->
+    <!-- Order : 1.kernelLog 2.androidLog 3. logd-->
+        <!-- Log exec -->
+        <logexec_linux>dmesg</logexec_linux>                    <!-- Linux    dmesg  -->
+        <logexec_android>logcat -v long -d</logexec_android>    <!-- android  logcat -->
+        <logexec_bugreport>dumpstate</logexec_bugreport>        <!-- bugreport -->
+        <logexec_logd>echo DA-SAVE > /data/tmp/logd_cmd</logexec_logd>
+                                                                <!-- etc      logd -->
+
+        <!-- Android Log buffer option -->
+        <logbuffer_main> -b main</logbuffer_main>               <!-- Main buffer   -->
+        <logbuffer_radio> -b radio</logbuffer_radio>            <!-- Radio buffer  -->
+        <logbuffer_events> -b events</logbuffer_events>         <!-- Events buffer -->
+
+        <!-- Linux Command -->
+        <linuxcommand_filename>linuxCommand.txt</linuxcommand_filename>
+                                                                <!-- LinuxCommandFile FileName  -->
+        <!-- df : Get the file system usage -->
+        <command1>df</command1>                                 <!-- command1 Command statement -->
+        <comexec1>1</comexec1>                                  <!-- command1 0(invalid)/1(valid) -->
+
+        <!-- ps : Get a list of running processes -->
+        <command2>ps</command2>                                 <!-- command2 Command statement -->
+        <comexec2>1</comexec2>                                  <!-- command2 0(invalid)/1(valid) -->
+
+        <!-- lsof : Get the process list of the specific port -->
+        <command3>lsof</command3>                               <!-- command3 Command statement -->
+        <comexec3>1</comexec3>                                  <!-- command3 0(invalid)/1(valid) -->
+
+        <!-- top -n 1 : Get a list of running processes -->
+        <command4>top -n 1</command4>                           <!-- command4 Command statement -->
+        <comexec4>1</comexec4>                                  <!-- command4 0(invalid)/1(valid) -->
+
+        <!-- uptime : Get the system uptime -->
+        <command5>uptime</command5>                             <!-- command5 Command statement -->
+        <comexec5>1</comexec5>                                  <!-- command5 0(invalid)/1(valid) -->
+
+        <!-- getprop : Get the setting for Android -->
+        <command6>getprop</command6>                            <!-- command6 Command statemen -->
+        <comexec6>1</comexec6>                                  <!-- command6 0(invalid)/1(valid) -->
+
+        <!-- cat /proc/meminfo : Get the current amount of free memory -->
+        <command7>cat /proc/meminfo</command7>                  <!-- command7 Command statemen -->
+        <comexec7>1</comexec7>                                  <!-- command7 0(invalid)/1(valid) -->
+
+        <!-- dumpsys batteryinfo : Get information about the batteryinfo service system state -->
+        <command8>dumpsys batteryinfo</command8>                <!-- command8 Command statemen -->
+        <comexec8>1</comexec8>                                  <!-- command8 0(invalid)/1(valid) -->
+
+</RmManagementConfigFile>

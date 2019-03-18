@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<append direction="left">
+    <!-- dメニュー -->
+    <application
+        packageName="com.nttdocomo.android.dmenu2"
+        className="com.nttdocomo.android.docomo_market.ui.StartupActivity" />
+    <!-- dマーケット -->
+    <application
+        packageName="com.nttdocomo.android.store"
+        className="com.nttdocomo.android.store.WebActivity" />
+    <!-- dゲーム -->
+    <launcher
+        icon="icd_app_dgame.png"
+        title="dゲーム"
+        title_en="d game"
+        uri="http://www.dmkt-sp.jp/?url=http%3A%2F%2Fportal.dmkt-sp.jp%2Fsp%2Fgame-store%2Ftop&amp;dcp=gameswebclipox010002" />
+    <!-- dブック -->
+    <launcher
+        icon="icd_app_dbook.png"
+        title="dブック"
+        title_en="d book"
+        uri="http://book.dmkt-sp.jp/top?utm_source=01android15ss&amp;utm_medium=1&amp;utm_campaign=1" />
+    <!-- dミュージック -->
+    <launcher
+        icon="icd_app_dmusic.png"
+        title="dミュージック"
+        title_en="d music"
+        uri="https://music.dmkt-sp.jp/?affiliate=3380990131" />
+    <!-- dアプリ＆レビュー -->
+    <launcher
+        icon="icd_app_app.png"
+        title="dアプリ＆レビュー"
+        title_en="d apps &amp; review"
+        uri="http://app.dcm-gate.com/?utm_source=device_home&amp;utm_medium=webclip&amp;utm_content=2015summer&amp;utm_campaign=prein" />
+    <!-- dショッピング -->
+    <launcher
+        icon="icd_app_dshopping.png"
+        title="dショッピング"
+        title_en="d shopping"
+        uri="http://shopping.dmkt-sp.jp/webclip" />
+    <!-- d fashion -->
+    <launcher
+        icon="icd_app_dfashion.png"
+        title="d fashion"
+        title_en="d fashion"
+        uri="http://fashion.dmkt-sp.jp/webclip" />
+    <!-- dトラベル -->
+    <launcher
+        icon="icd_app_dtravel.png"
+        title="dトラベル"
+        title_en="d travel"
+        uri="https://travel.dmkt-sp.jp/mlr.php?aid=webclip14s&amp;r=%2F%3Futm_source%3Ddcm%26utm_medium%3Dandroid%26utm_content%3Dwebclip15s%26utm_campaign%3Dtop" />
+    <!-- dクリエイターズ -->
+    <launcher
+        icon="icd_app_dcreator.png"
+        title="dクリエイターズ"
+        title_en="d creators"
+        uri="http://creators.dmkt-sp.jp/?af_id=X000000100" />
+    <!-- dデリバリー -->
+    <launcher
+        icon="icd_app_delivery.png"
+        title="dデリバリー"
+        title_en="d delivery"
+        uri="https://delivery.dmkt-sp.jp/?utm_source=docomo&amp;utm_medium=android&amp;utm_content=webclip_15summer&amp;utm_campaign=top" />
+    <!-- Nottv -->
+    <application
+        packageName="jp.co.mmbi.app"
+        className="jp.co.mmbi.app.MmbMainActivityUi" />
+    <!-- ドコモ設定 -->
+	<launcher
+		icon="icd_app_docomosettings.png" 
+		title="ドコモ設定" 
+		title_en="docomo Settings" 
+		uri="#Intent;action=android.intent.action.MAIN;category=com.android.settings.SHORTCUT;launchFlags=0x200000;component=com.nttdocomo.android.docomoset/.DocomoServiceSetting;end"/>
+	<!-- お客様サポート -->
+	<launcher
+	icon="icd_okyakusamasupport" 
+	title="お客様サポート" 
+	title_en="Customer Support" 
+	uri="http://smt.docomo.ne.jp/portal/support/src/support_index.html?liveui" />
+</append>

@@ -1,0 +1,960 @@
+# Copyright (C) 2012 The Android Open Source Project
+#
+# IMPORTANT: Do not create world writable files or directories.
+# This is a common source of Android security bugs.
+#
+
+import /init.environ.rc
+import /init.usb.rc
+import /init.${ro.hardware}.rc
+import /init.${ro.zygote}.rc
+import /init.trace.rc
+
+on early-init
+    # Set init and its forked children's oom_adj.
+    write /proc/1/oom_score_adj -1000
+
+    # Apply strict SELinux checking of PROT_EXEC on mmap/mprotect calls.
+    write /sys/fs/selinux/checkreqprot 0
+
+    # Set the security context for the init process.
+    # This should occur before anything else (e.g. ueventd) is started.
+    setcon u:r:init:s0
+
+    # Set the security context of /adb_keys if present.
+    restorecon /adb_keys
+
+    start ueventd
+
+    # create mountpoints
+    mkdir /mnt 0775 root system
+
+on init
+    sysclktz 0
+
+    loglevel 3
+
+    # Backward compatibility
+    symlink /system/etc /etc
+    symlink /sys/kernel/debug /d
+
+    # Right now vendor lives on the same filesystem as system,
+    # but someday that may change.
+    symlink /system/vendor /vendor
+
+# SHARP_EXTEND WFD add start
+    mkdir /synthesis
+    mount tmpfs tmpfs /synthesis nosuid nodev
+    chown root root /synthesis
+    chmod 0711 /synthesis
+    mkdir /synthesis/wfd 0775 root shwfd
+# SHARP_EXTEND WFD add end
+
+# SHARP_EXTEND ResetLog add start
+    mkdir /synthesis/hades 0775 root root
+# SHARP_EXTEND ResetLog add end
+
+## SHARP_EXTEND DTV Collabo add-start
+    mkdir /sdservice_tmp
+    mount tmpfs tmpfs /sdservice_tmp nosuid nodev
+    chown root sdservice /sdservice_tmp
+    chmod 01775 /sdservice_tmp
+    mkdir /sceservice_tmp
+    mount tmpfs tmpfs /sceservice_tmp nosuid nodev
+    chown root root /sceservice_tmp
+    chmod 01775 /sceservice_tmp
+## SHARP_EXTEND DTV Collabo add-end
+
+    # Create cgroup mount point for cpu accounting
+    mkdir /acct
+    mount cgroup none /acct cpuacct
+    mkdir /acct/uid
+
+    # Create cgroup mount point for memory
+    mount tmpfs none /sys/fs/cgroup mode=0750,uid=0,gid=1000
+    mkdir /sys/fs/cgroup/memory 0750 root system
+    mount cgroup none /sys/fs/cgroup/memory memory
+    write /sys/fs/cgroup/memory/memory.move_charge_at_immigrate 1
+    chown root system /sys/fs/cgroup/memory/tasks
+    chmod 0660 /sys/fs/cgroup/memory/tasks
+    mkdir /sys/fs/cgroup/memory/sw 0750 root system
+    write /sys/fs/cgroup/memory/sw/memory.swappiness 100
+    write /sys/fs/cgroup/memory/sw/memory.move_charge_at_immigrate 1
+    chown root system /sys/fs/cgroup/memory/sw/tasks
+    chmod 0660 /sys/fs/cgroup/memory/sw/tasks
+
+    mkdir /system
+    mkdir /data 0771 system system
+    mkdir /cache 0770 system cache
+    mkdir /config 0500 root root
+
+    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/shell 0700 shell shell
+    mkdir /mnt/media_rw 0700 media_rw media_rw
+    mkdir /storage 0751 root sdcard_r
+
+    # Directory for putting things only root should see.
+    mkdir /mnt/secure 0700 root root
+
+    # Directory for staging bindmounts
+    mkdir /mnt/secure/staging 0700 root root
+
+    # Directory-target for where the secure container
+    # imagefile directory will be bind-mounted
+    mkdir /mnt/secure/asec  0700 root root
+
+#SHARP_EXTEND filesystem sdencrypt temp mount point Add Start
+    mkdir /mnt/secure/plain  0700 root root
+    mkdir /mnt/secure/cipher  0700 root root
+#SHARP_EXTEND filesystem sdencrypt temp mount point Add End
+
+    # Secure container public mount points.
+    mkdir /mnt/asec  0700 root system
+    mount tmpfs tmpfs /mnt/asec mode=0755,gid=1000
+
+    # Filesystem image public mount points.
+    mkdir /mnt/obb 0700 root system
+    mount tmpfs tmpfs /mnt/obb mode=0755,gid=1000
+
+    # memory control cgroup
+    mkdir /dev/memcg 0700 root system
+    mount cgroup none /dev/memcg memory
+
+# SHARP_EXTEND Notification that might be black display. Start
+    mkdir /flinger_tmp
+    mount tmpfs tmpfs /flinger_tmp nosuid nodev
+    chown system system /flinger_tmp
+    chmod 0755 /flinger_tmp
+# SHARP_EXTEND Notification that might be black display. End
+
+    write /proc/sys/kernel/panic_on_oops 1
+    write /proc/sys/kernel/hung_task_timeout_secs 0
+    write /proc/cpu/alignment 4
+    write /proc/sys/kernel/sched_latency_ns 10000000
+    write /proc/sys/kernel/sched_wakeup_granularity_ns 2000000
+    write /proc/sys/kernel/sched_compat_yield 1
+    write /proc/sys/kernel/sched_child_runs_first 0
+    write /proc/sys/kernel/randomize_va_space 2
+    write /proc/sys/kernel/kptr_restrict 2
+    write /proc/sys/vm/mmap_min_addr 32768
+    write /proc/sys/net/ipv4/ping_group_range "0 2147483647"
+    write /proc/sys/net/unix/max_dgram_qlen 300
+    write /proc/sys/kernel/sched_rt_runtime_us 950000
+    write /proc/sys/kernel/sched_rt_period_us 1000000
+
+    # reflect fwmark from incoming packets onto generated replies
+    write /proc/sys/net/ipv4/fwmark_reflect 1
+    write /proc/sys/net/ipv6/fwmark_reflect 1
+
+    # set fwmark on accepted sockets
+    write /proc/sys/net/ipv4/tcp_fwmark_accept 1
+
+    # Create cgroup mount points for process groups
+    mkdir /dev/cpuctl
+    mount cgroup none /dev/cpuctl cpu
+    chown system system /dev/cpuctl
+    chown system system /dev/cpuctl/tasks
+    chmod 0666 /dev/cpuctl/tasks
+    write /dev/cpuctl/cpu.shares 1024
+    write /dev/cpuctl/cpu.rt_runtime_us 800000
+    write /dev/cpuctl/cpu.rt_period_us 1000000
+
+    mkdir /dev/cpuctl/bg_non_interactive
+    chown system system /dev/cpuctl/bg_non_interactive/tasks
+    chmod 0666 /dev/cpuctl/bg_non_interactive/tasks
+    # 5.0 %
+    write /dev/cpuctl/bg_non_interactive/cpu.shares 52
+    write /dev/cpuctl/bg_non_interactive/cpu.rt_runtime_us 700000
+    write /dev/cpuctl/bg_non_interactive/cpu.rt_period_us 1000000
+
+    # qtaguid will limit access to specific data based on group memberships.
+    #   net_bw_acct grants impersonation of socket owners.
+    #   net_bw_stats grants access to other apps' detailed tagged-socket stats.
+    chown root net_bw_acct /proc/net/xt_qtaguid/ctrl
+    chown root net_bw_stats /proc/net/xt_qtaguid/stats
+
+    # Allow everybody to read the xt_qtaguid resource tracking misc dev.
+    # This is needed by any process that uses socket tagging.
+    chmod 0644 /dev/xt_qtaguid
+
+    # Create location for fs_mgr to store abbreviated output from filesystem
+    # checker programs.
+    mkdir /dev/fscklogs 0770 root system
+
+    # pstore/ramoops previous console log
+    mount pstore pstore /sys/fs/pstore
+    chown system log /sys/fs/pstore/console-ramoops
+    chmod 0440 /sys/fs/pstore/console-ramoops
+
+    # SHARP_EXTEND for SSR Dump Start
+    write /sys/bus/msm_subsys/devices/subsys2/restart_level RELATED
+    write /sys/module/subsystem_restart/parameters/enable_ramdumps 1
+    # SHARP_EXTEND for SSR Dump End
+
+    # SHARP_EXTEND PlayReady Support Start #
+    mkdir /playready_tts
+    mount tmpfs tmpfs /playready_tts nosuid nodev
+    chown media media /playready_tts
+    chmod 0700 /playready_tts
+    # SHARP_EXTEND PlayReady Support End #
+
+# SHARP_EXTEND DTCP-IP Add-Start
+service ddtcps /system/bin/ddtcps
+    class main
+    user root
+    group root
+
+service ddtcps_tz /system/bin/ddtcps_tz
+    class main
+    user root
+    group root
+# SHARP_EXTEND DTCP-IP Add-End
+
+# Healthd can trigger a full boot from charger mode by signaling this
+# property when the power button is held.
+on property:sys.boot_from_charger_mode=1
+    class_stop charger
+    trigger late-init
+
+# Load properties from /system/ + /factory after fs mount.
+on load_all_props_action
+    load_all_props
+
+# Indicate to fw loaders that the relevant mounts are up.
+on firmware_mounts_complete
+    rm /dev/.booting
+
+# Mount filesystems and start core system services.
+on late-init
+    trigger early-fs
+    trigger fs
+    trigger post-fs
+    trigger post-fs-data
+
+    # Load properties from /system/ + /factory after fs mount. Place
+    # this in another action so that the load will be scheduled after the prior
+    # issued fs triggers have completed.
+    trigger load_all_props_action
+
+    # Remove a file to wake up anything waiting for firmware.
+    trigger firmware_mounts_complete
+
+    trigger early-boot
+    trigger boot
+
+
+on post-fs
+    # once everything is setup, no need to modify /
+    mount rootfs rootfs / ro remount
+    # mount shared so changes propagate into child namespaces
+    mount rootfs rootfs / shared rec
+
+    # We chown/chmod /cache again so because mount is run as root + defaults
+    chown system cache /cache
+    chmod 0770 /cache
+    # We restorecon /cache in case the cache partition has been reset.
+    restorecon_recursive /cache
+
+    # This may have been created by the recovery system with odd permissions
+    chown system cache /cache/recovery
+    chmod 0770 /cache/recovery
+
+    #change permissions on vmallocinfo so we can grab it from bugreports
+    chown root log /proc/vmallocinfo
+    chmod 0440 /proc/vmallocinfo
+
+    chown root log /proc/slabinfo
+    chmod 0440 /proc/slabinfo
+
+    #change permissions on kmsg & sysrq-trigger so bugreports can grab kthread stacks
+    chown root system /proc/kmsg
+    chmod 0440 /proc/kmsg
+    chown root system /proc/sysrq-trigger
+    chmod 0220 /proc/sysrq-trigger
+    chown system log /proc/last_kmsg
+    chmod 0440 /proc/last_kmsg
+
+    # make the selinux kernel policy world-readable
+    chmod 0444 /sys/fs/selinux/policy
+
+    # create the lost+found directories, so as to enforce our permissions
+    mkdir /cache/lost+found 0770 root root
+
+    # Create the lost+found directories, so as to set context(prevent unlabeled).
+    mkdir /tombstones/lost+found 0770 root root
+    mkdir /durable/lost+found 0770 root root
+    mkdir /diagapp/lost+found 0770 root root
+    restorecon_recursive /tombstones
+    restorecon_recursive /durable
+    restorecon_recursive /diagapp
+
+on post-fs-data
+    # We chown/chmod /data again so because mount is run as root + defaults
+    chown system system /data
+    chmod 0771 /data
+    # We restorecon /data in case the userdata partition has been reset.
+    restorecon /data
+
+    # Avoid predictable entropy pool. Carry over entropy from previous boot.
+    copy /data/system/entropy.dat /dev/urandom
+
+    # Create dump dir and collect dumps.
+    # Do this before we mount cache so eventually we can use cache for
+    # storing dumps on platforms which do not have a dedicated dump partition.
+    mkdir /data/dontpanic 0750 root log
+
+    # Collect apanic data, free resources and re-arm trigger
+    copy /proc/apanic_console /data/dontpanic/apanic_console
+    chown root log /data/dontpanic/apanic_console
+    chmod 0640 /data/dontpanic/apanic_console
+
+    copy /proc/apanic_threads /data/dontpanic/apanic_threads
+    chown root log /data/dontpanic/apanic_threads
+    chmod 0640 /data/dontpanic/apanic_threads
+
+    write /proc/apanic_console 1
+
+    # create basic filesystem structure
+    mkdir /data/misc 01771 system misc
+    mkdir /data/misc/adb 02750 system shell
+    mkdir /data/misc/bluedroid 0770 bluetooth net_bt_stack
+    mkdir /data/misc/bluetooth 0770 system system
+    mkdir /data/misc/keystore 0700 keystore keystore
+    mkdir /data/misc/keychain 0771 system system
+    mkdir /data/misc/net 0750 root shell
+    mkdir /data/misc/radio 0770 system radio
+    mkdir /data/misc/sms 0770 system radio
+    mkdir /data/misc/zoneinfo 0775 system system
+    mkdir /data/misc/vpn 0770 system vpn
+    mkdir /data/misc/shared_relro 0771 shared_relro shared_relro
+    mkdir /data/misc/systemkeys 0700 system system
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
+    mkdir /data/misc/ethernet 0770 system system
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    mkdir /data/misc/user 0771 root root
+    # give system access to wpa_supplicant.conf for backup and restore
+    chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+    mkdir /data/local 0751 root root
+    mkdir /data/misc/media 0700 media media
+
+    # For security reasons, /data/local/tmp should always be empty.
+    # Do not place files or directories in /data/local/tmp
+    mkdir /data/local/tmp 0771 shell shell
+    mkdir /data/data 0771 system system
+    mkdir /data/app-private 0771 system system
+    mkdir /data/app-asec 0700 root root
+    mkdir /data/app-lib 0771 system system
+    mkdir /data/app 0771 system system
+    mkdir /data/property 0700 root root
+
+    # create dalvik-cache, so as to enforce our permissions
+    mkdir /data/dalvik-cache 0771 root root
+    mkdir /data/dalvik-cache/profiles 0711 system system
+
+    # create resource-cache and double-check the perms
+    mkdir /data/resource-cache 0771 system system
+    chown system system /data/resource-cache
+    chmod 0771 /data/resource-cache
+
+    # create the lost+found directories, so as to enforce our permissions
+    mkdir /data/lost+found 0770 root root
+
+    # create directory for DRM plug-ins - give drm the read/write access to
+    # the following directory.
+    mkdir /data/drm 0770 drm drm
+
+    # SHARP_EXTEND Policy Write task log. [OTHER-13] Start
+    mkdir /durable/htemp 0770 root system
+    # SHARP_EXTEND Policy Write task log. [Other-13] End
+
+# SHARP_EXTEND 2013.12.06 for SHDISP Mod Start
+    mkdir /data/misc/shdisp 0770 system system
+# SHARP_EXTEND 2013.12.06 for SHDISP Mod End
+
+# SHARP_EXTEND for BgPowerUsage Start
+    mkdir /synthesis/bgpowerusage 0775 system system
+# SHARP_EXTEND for BgPowerUsage End
+
+# SHARP_EXTEND Output callstack. Start
+    mkdir /durable/surface_stall 0700 system system
+# SHARP_EXTEND Output callstack. End
+
+    # create directory for MediaDrm plug-ins - give drm the read/write access to
+    # the following directory.
+    mkdir /data/mediadrm 0770 mediadrm mediadrm
+
+    mkdir /data/adb 0700 root root
+
+    # symlink to bugreport storage location
+    symlink /data/data/com.android.shell/files/bugreports /data/bugreports
+
+    # Separate location for storing security policy files on data
+    mkdir /data/security 0711 system system
+
+    # Reload policy from /data/security if present.
+    setprop selinux.reload_policy 1
+
+    # Set SELinux security contexts on upgrade or policy update.
+    restorecon_recursive /data
+
+    # If there is no fs-post-data action in the init.<device>.rc file, you
+    # must uncomment this line, otherwise encrypted filesystems
+    # won't work.
+    # Set indication (checked by vold) that we have finished this action
+    #setprop vold.post_fs_data_done 1
+
+    # SHARP_EXTEND Write wipe log. [DPM-6] 2015.01.08 Start
+    mkdir /durable/wipelog 0700 system system
+    # SHARP_EXTEND Write wipe log. [DPM-6] End
+
+# SHARP_EXTEND UIM log add start
+    mkdir /durable/uim 0700 system system
+# SHARP_EXTEND UIM log add end
+
+on boot
+
+# SHARP_EXTEND for DLfont access. Start
+    mkdir /data/mwdlfont 0777 system system
+# SHARP_EXTEND for DLfont access. End
+
+    # basic network init
+    ifup lo
+    hostname localhost
+    domainname localdomain
+
+    # set RLIMIT_NICE to allow priorities from 19 to -20
+    setrlimit 13 40 40
+
+    # Memory management.  Basic kernel parameters, and allow the high
+    # level system server to be able to adjust the kernel OOM driver
+    # parameters to match how it is managing things.
+    write /proc/sys/vm/overcommit_memory 1
+    write /proc/sys/vm/min_free_order_shift 4
+    chown root system /sys/module/lowmemorykiller/parameters/adj
+    chmod 0220 /sys/module/lowmemorykiller/parameters/adj
+    chown root system /sys/module/lowmemorykiller/parameters/minfree
+    chmod 0220 /sys/module/lowmemorykiller/parameters/minfree
+
+    # Tweak background writeout
+    write /proc/sys/vm/dirty_expire_centisecs 200
+    write /proc/sys/vm/dirty_background_ratio  5
+
+    # Permissions for System Server and daemons.
+    chown radio system /sys/android_power/state
+    chown radio system /sys/android_power/request_state
+    chown radio system /sys/android_power/acquire_full_wake_lock
+    chown radio system /sys/android_power/acquire_partial_wake_lock
+    chown radio system /sys/android_power/release_wake_lock
+    chown system system /sys/power/autosleep
+    chown system system /sys/power/state
+    chown system system /sys/power/wakeup_count
+    chown radio system /sys/power/wake_lock
+    chown radio system /sys/power/wake_unlock
+    chmod 0660 /sys/power/state
+    chmod 0660 /sys/power/wake_lock
+    chmod 0660 /sys/power/wake_unlock
+# SHARP_EXTEND SleepLog add start
+    chown system system /sys/power/panel_state
+    chmod 0660 /sys/power/panel_state
+# SHARP_EXTEND SleepLog add end
+
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_slack
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/timer_slack
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/target_loads
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/target_loads
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/boost
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/boost
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/input_boost
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/input_boost
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration
+    chown system system /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
+
+    # Assume SMP uses shared cpufreq policy for all CPUs
+    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/class/leds/keyboard-backlight/brightness
+    chown system system /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/torch-light/brightness
+    chown system system /sys/class/leds/button-backlight/brightness
+    chown system system /sys/class/leds/jogball-backlight/brightness
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/red/duty_pcts
+    chown system system /sys/class/leds/red/lut_flags
+    chown system system /sys/class/leds/red/pause_hi
+    chown system system /sys/class/leds/red/pause_lo
+    chown system system /sys/class/leds/red/ramp_step_ms
+    chown system system /sys/class/leds/red/start_idx
+    chown system system /sys/class/leds/red/insert
+    chown system system /sys/class/leds/red/select
+    chown system system /sys/class/leds/red/device/grpfreq
+    chown system system /sys/class/leds/red/device/grppwm
+    chown system system /sys/class/leds/red/device/blink
+
+    chown system system /sys/class/leds/sh-red1/brightness
+    chown system system /sys/class/leds/sh-red1/max_brightness
+    chown system system /sys/class/leds/sh-green1/brightness
+    chown system system /sys/class/leds/sh-green1/max_brightness
+    chown system system /sys/class/leds/sh-blue1/brightness
+    chown system system /sys/class/leds/sh-blue1/max_brightness
+    chown system system /sys/class/leds/sh-red2/brightness
+    chown system system /sys/class/leds/sh-red2/max_brightness
+    chown system system /sys/class/leds/sh-green2/brightness
+    chown system system /sys/class/leds/sh-green2/max_brightness
+    chown system system /sys/class/leds/sh-blue2/brightness
+    chown system system /sys/class/leds/sh-blue2/max_brightness
+
+    chown system system /sys/class/timed_output/vibrator/enable
+    chown system system /sys/module/sco/parameters/disable_esco
+    chown system system /sys/kernel/ipv4/tcp_wmem_min
+    chown system system /sys/kernel/ipv4/tcp_wmem_def
+    chown system system /sys/kernel/ipv4/tcp_wmem_max
+    chown system system /sys/kernel/ipv4/tcp_rmem_min
+    chown system system /sys/kernel/ipv4/tcp_rmem_def
+    chown system system /sys/kernel/ipv4/tcp_rmem_max
+    chown root radio /proc/cmdline
+
+    # SHARP_EXTEND SYS_ANA C110 ADD  Start
+    chown system system /sys/module/sh_systime/parameters/timestamp_point
+    # SHARP_EXTEND SYS_ANA C110 ADD  End
+
+    # SHARP_EXTEND PLAYREADY ADD start #
+    mkdir /data/DxDrm
+    chown media media /data/DxDrm
+    chmod 0770 /data/DxDrm
+    chown media media /data/DxDrm/DxDrmConfig.txt
+    chmod 0660 /data/DxDrm/DxDrmConfig.txt
+    chown media media /data/DxDrm/Credentials/
+    chmod 0770 /data/DxDrm/Credentials/
+    chown media media /data/DxDrm/Credentials/PlayReady
+    chmod 0770 /data/DxDrm/Credentials/PlayReady
+    chown media media /data/DxDrm/Credentials/PlayReady/bgroupcert.dat
+    chown media media /data/DxDrm/Credentials/PlayReady/devcerttemplate.dat
+    chown media media /data/DxDrm/Credentials/PlayReady/priv.dat
+    chown media media /data/DxDrm/Credentials/PlayReady/zgpriv.dat
+    chmod 0660 /data/DxDrm/Credentials/PlayReady/bgroupcert.dat
+    chmod 0660 /data/DxDrm/Credentials/PlayReady/devcerttemplate.dat
+    chmod 0660 /data/DxDrm/Credentials/PlayReady/priv.dat
+    chmod 0660 /data/DxDrm/Credentials/PlayReady/zgpriv.dat
+
+    chown media media /data/sfs
+    chmod 0770 /data/sfs
+    chown media media /data/sfs/dxprdy
+    chmod 0770 /data/sfs/dxprdy
+    chown media media /data/sfs/dxprdy/dxprdy
+    chmod 0770 /data/sfs/dxprdy/dxprdy
+    chown media media /data/sfs/dxprdy/dxprdy/dxprdy.sfs
+    chmod 0660 /data/sfs/dxprdy/dxprdy/dxprdy.sfs
+
+    # SHARP_EXTEND PLAYREADY ADD end #
+
+    # Define default initial receive window size in segments.
+    setprop net.tcp.default_init_rwnd 60
+
+#SHARP_EXTEND set permission and user/group to Camera LED Add-Start
+    chown system camera /sys/devices/platform/shcamled_torch.0/shcamled_torch
+#SHARP_EXTEND set permission and user/group to Camera LED Add-End
+
+# SHARP_EXTEND [NFC][Toshiba] Add Start
+# NFC: create data/nfc for nv storage
+    mkdir /data/nfc 0770 nfc nfc
+    mkdir /data/nfc/param 0770 nfc nfc
+# SHARP_EXTEND [NFC][Toshiba] Add 
+
+# SHARP_EXTEND DTV-Collabo Add-Start
+    mkdir /data/cnt 0771 system system
+    mkdir /data/cnt/dlna 0700 root root
+    mkdir /data/cnt/oneseg 0770 root root
+
+    mkdir /durable/dtv 0700 root root
+    mkdir /durable/dtv/sdservice 0700 root root
+    mkdir /durable/dtv/sceservicedlna 0700 root root
+
+#    chown root system /sys/module/mmcblk/parameters/sh_sd_eco_mode
+    chown root system /sys/module/mpq_dmx_hw_plugin/parameters/tspp_channel_timeout
+    chmod 0664 /sys/module/mpq_dmx_hw_plugin/parameters/tspp_channel_timeout
+# SHARP_EXTEND DTV-Collabo Add-End
+
+    # SHARP_EXTEND Emergency Shutdown Timeout ADD Start
+    chown system system /sys/module/msm_poweroff/parameters/emergency_mode
+    # SHARP_EXTEND Emergency Shutdown Timeout ADD End
+
+    # SHARP_EXTEND SHPWR ADD start #
+    chown root system /sys/class/power_supply/usb/voltage_max
+    write /sys/class/power_supply/usb/voltage_max 9000000
+    # SHARP_EXTEND SHPWR ADD end #
+
+    mkdir /durable/shld 0700 root root
+    mkdir /durable/applog 0700 root root
+
+# SHARP_EXTEND emopa add start
+    mkdir /durable/emopalog 0770 root emopa
+# SHARP_EXTEND emopa add end
+
+    class_start core
+
+on nonencrypted
+    class_start main
+    class_start late_start
+
+
+#SHARP_EXTEND filesystem sdencrypt asynchronous command support Add Start
+on property:vold.sdencrypt=1
+    start encryptSdAndMnt
+
+on property:vold.sdencrypt=0
+    start decryptSdAndMnt
+#SHARP_EXTEND filesystem sdencrypt asynchronous command support Add End
+
+on property:vold.decrypt=trigger_default_encryption
+    start defaultcrypto
+
+on property:vold.decrypt=trigger_encryption
+    start surfaceflinger
+    start encrypt
+
+on property:sys.init_log_level=*
+    loglevel ${sys.init_log_level}
+
+on charger
+    class_start charger
+
+on property:vold.decrypt=trigger_reset_main
+    class_reset main
+
+on property:vold.decrypt=trigger_load_persist_props
+    load_persist_props
+
+on property:vold.decrypt=trigger_post_fs_data
+    trigger post-fs-data
+
+on property:vold.decrypt=trigger_restart_min_framework
+    class_start main
+
+on property:vold.decrypt=trigger_restart_framework
+    class_start main
+    class_start late_start
+
+on property:vold.decrypt=trigger_shutdown_framework
+    class_reset late_start
+    class_reset main
+
+on property:sys.powerctl=*
+    powerctl ${sys.powerctl}
+
+# system server cannot write to /proc/sys files,
+# and chown/chmod does not work for /proc/sys/ entries.
+# So proxy writes through init.
+on property:sys.sysctl.extra_free_kbytes=*
+    write /proc/sys/vm/extra_free_kbytes ${sys.sysctl.extra_free_kbytes}
+
+# "tcp_default_init_rwnd" Is too long!
+on property:sys.sysctl.tcp_def_init_rwnd=*
+    write /proc/sys/net/ipv4/tcp_default_init_rwnd ${sys.sysctl.tcp_def_init_rwnd}
+
+on property:ro.boot.wakeinfo=32
+    start shhotstandby
+
+on property:ro.boot.wakeinfo=33
+    start shhotstandby
+
+## Daemon processes to be run by init.
+##
+service ueventd /sbin/ueventd
+    class core
+    critical
+    seclabel u:r:ueventd:s0
+
+service logd /system/bin/logd
+    class core
+    socket logd stream 0666 logd logd
+    socket logdr seqpacket 0666 logd logd
+    socket logdw dgram 0222 logd logd
+    seclabel u:r:logd:s0
+
+service healthd /sbin/healthd
+    class core
+    critical
+    seclabel u:r:healthd:s0
+
+service console /system/bin/sh
+    class core
+    console
+    disabled
+    user shell
+    group shell log
+    seclabel u:r:shell:s0
+
+on property:ro.debuggable=1
+    start console
+
+service shlogd /system/bin/shlogd
+    class main
+    group system sdcard_rw
+    socket dmac stream 0666 root dmac
+
+# adbd is controlled via property triggers in init.<platform>.usb.rc
+service adbd /sbin/adbd --root_seclabel=u:r:su:s0
+    class core
+    socket adbd stream 660 system system
+    disabled
+    seclabel u:r:adbd:s0
+
+# adbd on at boot in emulator
+on property:ro.kernel.qemu=1
+    start adbd
+
+service lmkd /system/bin/lmkd
+    class core
+    critical
+    socket lmkd seqpacket 0660 system system
+
+service servicemanager /system/bin/servicemanager
+    class core
+    user system
+    group system
+    critical
+    onrestart restart healthd
+    onrestart restart zygote
+    onrestart restart media
+    onrestart restart surfaceflinger
+    onrestart restart drm
+
+service vold /system/bin/vold
+    class core
+    socket vold stream 0660 root mount
+    ioprio be 2
+
+service netd /system/bin/netd
+    class main
+    socket netd stream 0660 root system
+    socket dnsproxyd stream 0660 root inet
+    socket mdns stream 0660 root system
+    socket fwmarkd stream 0660 root inet
+
+service debuggerd /system/bin/debuggerd
+    class main
+
+service debuggerd64 /system/bin/debuggerd64
+    class main
+
+service ril-daemon /system/bin/rild
+    class main
+    socket rild stream 660 root radio
+    socket rild-debug stream 660 radio system
+# SHARP_EXTEND UIM-D101B APDU ACCESS For TMM Start
+    socket rild-cas stream 660 casdrm mmb
+# SHARP_EXTEND UIM-D101B APDU ACCESS For TMM End
+    user root
+    group radio cache inet misc audio log qcom_diag
+
+service surfaceflinger /system/bin/surfaceflinger
+    class core
+# SHARP_EXTEND Watchdog timer SurfaceFlinger. Start
+#    user system
+    user root
+# SHARP_EXTEND Watchdog timer SurfaceFlinger. End
+    group graphics drmrpc
+    onrestart restart zygote
+
+#  SHARP_EXTEND mwdlfont Start
+service mwdlfont /system/bin/mwdlfont
+    class main
+#  SHARP_EXTEND mwdlfont End
+
+service drm /system/bin/drmserver
+    class main
+    user drm
+    group drm system inet drmrpc
+
+service media /system/bin/mediaserver
+    class main
+    user media
+# SH_AUDIO_DRIVER-> 18-005
+#    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm qcom_diag
+    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm qcom_diag system
+# <- SH_AUDIO_DRIVER 18-005
+    ioprio rt 4
+
+# One shot invocation to deal with encrypted volume.
+service defaultcrypto /system/bin/vdc --wait cryptfs mountdefaultencrypted
+    disabled
+    oneshot
+    # vold will set vold.decrypt to trigger_restart_framework (default
+    # encryption) or trigger_restart_min_framework (other encryption)
+
+#SHARP_EXTEND filesystem sdencrypt asynchronous command support Add Start
+# One shot invocation to deal with encrypted volume.
+service encryptSdAndMnt /system/bin/vdc --wait volume encryptSdcardAndMount
+    disabled
+    oneshot
+    # vold will set vold.sdencrypt to 1
+
+# One shot invocation to deal with decrypted volume.
+service decryptSdAndMnt /system/bin/vdc --wait volume decryptSdcardAndMount
+    disabled
+    oneshot
+    # vold will set vold.sdencrypt to 0
+#SHARP_EXTEND filesystem sdencrypt asynchronous command support Add End
+
+# One shot invocation to encrypt unencrypted volumes
+service encrypt /system/bin/vdc --wait cryptfs enablecrypto inplace default
+    disabled
+    oneshot
+    # vold will set vold.decrypt to trigger_restart_framework (default
+    # encryption)
+
+service bootanim /system/bin/bootanimation
+    class core
+# SHARP_EXTEND for bootanimation Start
+#   user media
+    user graphics
+# SHARP_EXTEND for bootanimation End
+    group graphics audio
+    disabled
+    oneshot
+
+service installd /system/bin/installd
+    class main
+    socket installd stream 600 system system
+
+# SHARP_EXTEND for deletion of standard FOTA function Del Start
+#service flash_recovery /system/bin/install-recovery.sh
+#    class main
+#    seclabel u:r:install_recovery:s0
+#    oneshot
+# SHARP_EXTEND for deletion of standard FOTA function Del End
+
+service racoon /system/bin/racoon
+    class main
+    socket racoon stream 600 system system
+    # IKE uses UDP port 500. Racoon will setuid to vpn after binding the port.
+    group vpn net_admin inet
+    disabled
+    oneshot
+
+service mtpd /system/bin/mtpd
+    class main
+    socket mtpd stream 600 system system
+    user vpn
+    group vpn net_admin inet net_raw
+    disabled
+    oneshot
+
+service keystore /system/bin/keystore /data/misc/keystore
+    class main
+    user keystore
+    group keystore drmrpc
+
+service dumpstate /system/bin/dumpstate -s
+    class main
+    socket dumpstate stream 0660 shell log
+    disabled
+    oneshot
+
+# SHARP_EXTEND ADD-START
+service dumpklog /system/bin/dumpklog
+    class main
+    socket dumpklog stream 0660 shell log
+    disabled
+    oneshot
+# SHARP_EXTEND ADD-END
+
+service mdnsd /system/bin/mdnsd
+    class main
+    user mdnsr
+    group inet net_raw
+    socket mdnsd stream 0660 mdnsr inet
+    disabled
+    oneshot
+
+service pre-recovery /system/bin/uncrypt
+    class main
+    disabled
+    oneshot
+
+# SHARP_EXTEND for shbatt_process Start
+# shbatt
+service shbatt_process /system/bin/shbatt_process
+    class core
+# SHARP_EXTEND for shbatt_process End
+
+# SHARP_EXTEND SHDIAG add start
+service shdiag /sbin/shdiag
+    class core
+    oneshot
+    seclabel u:r:sh_diag:s0
+
+service shsoftupdate /system/bin/shsoftupdate
+    class core
+    oneshot
+    seclabel u:r:sh_diag:s0
+# SHARP_EXTEND SHDIAG add end
+
+# SHARP_EXTEND add for shrmts_usr Start
+service shrmts_usr /system/bin/shrmts_usr
+    class core
+# SHARP_EXTEND add for shrmts_usr End
+
+# SHARP_EXTEND SHDISP add start
+service shdisp_process /system/bin/shdisp_process
+    class main
+    socket shdisp_process stream 0660 root mount
+# SHARP_EXTEND SHDISP add end
+
+# SHARP_EXTEND for SSR Dump Start
+service ssrdump /system/bin/subsystem_ramdump 1
+    class main
+    user root
+    group root
+# SHARP_EXTEND for SSR Dump End
+
+# SHARP_EXTEND for DTV-Collabo Add-Start
+service dtvdeviceservice /system/bin/dtvdeviceservice
+    class main
+    user root
+    group root
+
+service sdservice /system/bin/sdservice
+    class main
+
+service sceservice /system/bin/sceservice
+    class main
+# SHARP_EXTEND for DTV Collabo add-end
+
+# SHARP_EXTEND for DLNA Add-Start
+service dlnasaveservice /system/bin/dlnasaveservice
+    class main
+    user root
+    group root
+# SHARP_EXTEND for DLNA add-end
+
+# SHARP_EXTEND DevicePolicy on init.rc Add Start
+service init_devadmin /system/bin/sh /system/vendor/bin/init_devadmin.sh
+    class main
+    user system
+    group system
+    oneshot
+# SHARP_EXTEND DevicePolicy on init.rc Add End
+
+service shhotstandby /system/bin/shhotstandby
+    class core
+    disabled
+

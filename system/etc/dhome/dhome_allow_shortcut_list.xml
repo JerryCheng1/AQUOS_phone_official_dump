@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <!-- Google検索ウィジェット -->
+    <item
+        packageName="com.google.android.googlequicksearchbox"
+        className="com.google.android.googlequicksearchbox.SearchWidgetProvider"
+        spanX="4" spanY="1" />
+    <!-- スケメモ -->
+    <item
+        packageName="com.nttdocomo.android.schedulememo"
+        className="com.nttdocomo.android.schedulememo.schedulewidget.ScheduleWidgetProvider"
+        spanX="4" spanY="3" />
+    <!-- ドコモ設定 -->
+    <item
+    	packageName="com.nttdocomo.android.docomoset"
+    	className="com.nttdocomo.android.docomoset.DocomoServiceSetting" />
+</list>
