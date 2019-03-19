@@ -1,0 +1,2 @@
+/vendor/firmware/T6NE6_patch39.clf
+/vendor/firmware/T6NE6_patch72.clf

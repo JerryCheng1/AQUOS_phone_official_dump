@@ -1,0 +1,32 @@
+#!PA_PROJECT!#
+Description                    "Blaze-generated patts1_hmm_phone voice for ja_jp (speaker htm, sample rate 22050, size android)";
+ServerVoiceName                "htm-phone-hmm";
+speaker                        "htm";
+sample_rate                    "22050";
+gender                         "female";
+subset                         "android";
+aligner                        "flatstart";
+language                       "ja";
+region                         "jp";
+quality                        "normal";
+pipeline                       "flatstart_patts1_hmm_phone_ja_jp_htm_22050_android.pipeline";
+classify                       "classify_android.far";
+CompileParamsFile              "compile_hmm_phoneme.cfg";
+engine_config                  "engine_config_ja_jp.pb";
+EngineParamsFile               "engine_hmm_22050_vocaine-embedded_mcep.cfg";
+japanese_accent_labeler_model  "accent_labeler_mozc_embedded.model";
+japanese_mora_phonemes_table   "phonemes_table.txt";
+japanese_suffix_word_data      "suffix_word_verbalizer_rules.pb";
+japanese_tokenizer_mozc_dictionary_bin "mozc_dictionary_embedded.bin";
+japanese_transliterator        "translit_android.far";
+ActiveLexicon                  "compressed_lexicon_ja_jp.blex";
+RunVoiceFile                   "patts1_hmm_voice_ja_jp_htm_android_22050_phoneme_mcep_swop_ap_msd_bin_8bit.voice";
+TextNormParamsFile             "textnorm_kestrel.cfg";
+DataParamsFile                 "phonology.cfg";
+phonology                      "phonology.pb";
+rewrite                        "rewrite_android.far";
+textnorm_params                "textnorm_params.pb";
+tokenize                       "tokenize_ja_android.far";
+verbalize                      "verbalize_android.far";
+modules                        "rewrite_simple japanese_tokenizer_mozc classify_kestrel japanese_transliterator verbalize_kestrel japanese_number_suffix_word_modifier japanese_accent_modifier japanese_pronounce hmm";
+
