@@ -1,0 +1,309 @@
+nf { stream: "phoneme" s_position: 0 feature: "onset" type: BOOL }
+nf { stream: "phoneme" s_position: 1 feature: "onset" type: BOOL }
+nf { stream: "phoneme" s_position: 2 feature: "onset" type: BOOL }
+nf { stream: "phoneme" s_position: 0 feature: "rounded" type: BOOL }
+nf { stream: "phoneme" s_position: 1 feature: "rounded" type: BOOL }
+nf { stream: "phoneme" s_position: 2 feature: "rounded" type: BOOL }
+nf { stream: "phoneme" s_position: 0 feature: "voiced" type: BOOL }
+nf { stream: "phoneme" s_position: 1 feature: "voiced" type: BOOL }
+nf { stream: "phoneme" s_position: 2 feature: "voiced" type: BOOL }
+nf { stream: "phoneme" s_position: 0 feature: "vowel" type: BOOL }
+nf { stream: "phoneme" s_position: 1 feature: "vowel" type: BOOL }
+nf { stream: "phoneme" s_position: 2 feature: "vowel" type: BOOL }
+nf { stream: "word" s_position: 0 feature: "pitch_accent_phrase_start" type: BOOL }
+nf { stream: "word" s_position: 1 feature: "pitch_accent_phrase_start" type: BOOL }
+nf { stream: "word" s_position: 2 feature: "pitch_accent_phrase_start" type: BOOL }
+question { nf { stream: "phoneme" s_position: 0 feature: "height" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 0 feature: "height" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 0 feature: "height" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 0 feature: "height" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 0 feature: "height" } ival: 5 }
+question { nf { stream: "phoneme" s_position: 0 feature: "height" } ival: 6 }
+question { nf { stream: "phoneme" s_position: 0 feature: "height" } ival: 7 }
+question { nf { stream: "phoneme" s_position: 1 feature: "height" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 1 feature: "height" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 1 feature: "height" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 1 feature: "height" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 1 feature: "height" } ival: 5 }
+question { nf { stream: "phoneme" s_position: 1 feature: "height" } ival: 6 }
+question { nf { stream: "phoneme" s_position: 1 feature: "height" } ival: 7 }
+question { nf { stream: "phoneme" s_position: 2 feature: "height" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 2 feature: "height" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 2 feature: "height" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 2 feature: "height" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 2 feature: "height" } ival: 5 }
+question { nf { stream: "phoneme" s_position: 2 feature: "height" } ival: 6 }
+question { nf { stream: "phoneme" s_position: 2 feature: "height" } ival: 7 }
+question { nf { stream: "phoneme" s_position: 0 feature: "length" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 0 feature: "length" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 1 feature: "length" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 1 feature: "length" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 2 feature: "length" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 2 feature: "length" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 0 feature: "manner" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 0 feature: "manner" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 0 feature: "manner" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 0 feature: "manner" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 0 feature: "manner" } ival: 5 }
+question { nf { stream: "phoneme" s_position: 0 feature: "manner" } ival: 6 }
+question { nf { stream: "phoneme" s_position: 1 feature: "manner" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 1 feature: "manner" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 1 feature: "manner" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 1 feature: "manner" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 1 feature: "manner" } ival: 5 }
+question { nf { stream: "phoneme" s_position: 1 feature: "manner" } ival: 6 }
+question { nf { stream: "phoneme" s_position: 2 feature: "manner" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 2 feature: "manner" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 2 feature: "manner" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 2 feature: "manner" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 2 feature: "manner" } ival: 5 }
+question { nf { stream: "phoneme" s_position: 2 feature: "manner" } ival: 6 }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "N" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "Q" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "a" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "aa" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "b" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "ch" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "d" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "e" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "ee" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "f" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "g" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "h" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "i" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "ii" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "j" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "k" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "m" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "n" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "o" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "oo" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "p" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "r" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "s" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "sh" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "sil" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "t" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "ts" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "u" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "uu" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "w" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "y" }
+question { nf { stream: "phoneme" s_position: 0 feature: "name" } sval: "z" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "N" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "Q" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "a" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "aa" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "b" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "ch" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "d" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "e" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "ee" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "f" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "g" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "h" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "i" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "ii" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "j" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "k" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "m" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "n" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "o" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "oo" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "p" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "r" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "s" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "sh" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "sil" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "t" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "ts" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "u" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "uu" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "w" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "y" }
+question { nf { stream: "phoneme" s_position: 1 feature: "name" } sval: "z" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "N" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "Q" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "a" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "aa" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "b" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "ch" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "d" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "e" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "ee" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "f" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "g" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "h" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "i" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "ii" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "j" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "k" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "m" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "n" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "o" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "oo" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "p" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "r" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "s" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "sh" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "sil" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "t" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "ts" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "u" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "uu" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "w" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "y" }
+question { nf { stream: "phoneme" s_position: 2 feature: "name" } sval: "z" }
+question { nf { stream: "phoneme" s_position: 0 feature: "poa" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 0 feature: "poa" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 0 feature: "poa" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 0 feature: "poa" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 0 feature: "poa" } ival: 5 }
+question { nf { stream: "phoneme" s_position: 0 feature: "poa" } ival: 6 }
+question { nf { stream: "phoneme" s_position: 0 feature: "poa" } ival: 7 }
+question { nf { stream: "phoneme" s_position: 1 feature: "poa" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 1 feature: "poa" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 1 feature: "poa" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 1 feature: "poa" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 1 feature: "poa" } ival: 5 }
+question { nf { stream: "phoneme" s_position: 1 feature: "poa" } ival: 6 }
+question { nf { stream: "phoneme" s_position: 1 feature: "poa" } ival: 7 }
+question { nf { stream: "phoneme" s_position: 2 feature: "poa" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 2 feature: "poa" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 2 feature: "poa" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 2 feature: "poa" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 2 feature: "poa" } ival: 5 }
+question { nf { stream: "phoneme" s_position: 2 feature: "poa" } ival: 6 }
+question { nf { stream: "phoneme" s_position: 2 feature: "poa" } ival: 7 }
+question { nf { stream: "phoneme" s_position: 0 feature: "position" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 0 feature: "position" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 0 feature: "position" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 0 feature: "position" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 1 feature: "position" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 1 feature: "position" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 1 feature: "position" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 1 feature: "position" } ival: 4 }
+question { nf { stream: "phoneme" s_position: 2 feature: "position" } ival: 1 }
+question { nf { stream: "phoneme" s_position: 2 feature: "position" } ival: 2 }
+question { nf { stream: "phoneme" s_position: 2 feature: "position" } ival: 3 }
+question { nf { stream: "phoneme" s_position: 2 feature: "position" } ival: 4 }
+question { nf { stream: "syllable" s_position: 0 feature: "stress" } ival: 0 }
+question { nf { stream: "syllable" s_position: 0 feature: "stress" } ival: 1 }
+question { nf { stream: "syllable" s_position: 1 feature: "stress" } ival: 0 }
+question { nf { stream: "syllable" s_position: 1 feature: "stress" } ival: 1 }
+question { nf { stream: "syllable" s_position: 2 feature: "stress" } ival: 0 }
+question { nf { stream: "syllable" s_position: 2 feature: "stress" } ival: 1 }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "N" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "Q" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "a" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "aa" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "e" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "ee" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "i" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "ii" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "o" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "oo" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "u" }
+question { nf { stream: "syllable" s_position: 0 feature: "vowel_of_syllable" } sval: "uu" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "N" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "Q" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "a" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "aa" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "e" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "ee" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "i" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "ii" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "o" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "oo" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "u" }
+question { nf { stream: "syllable" s_position: 1 feature: "vowel_of_syllable" } sval: "uu" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "N" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "Q" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "a" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "aa" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "e" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "ee" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "i" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "ii" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "o" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "oo" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "u" }
+question { nf { stream: "syllable" s_position: 2 feature: "vowel_of_syllable" } sval: "uu" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "UNKNOWN" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\343\201\235\343\201\256\344\273\226" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\343\203\225\343\202\243\343\203\251\343\203\274" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\345\211\257\350\251\236" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\345\212\251\345\213\225\350\251\236" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\345\212\251\350\251\236" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\345\213\225\350\251\236" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\345\220\215\350\251\236" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\345\275\242\345\256\271\350\251\236" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\346\204\237\345\213\225\350\251\236" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\346\216\245\347\266\232\350\251\236" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\346\216\245\351\240\255\350\251\236" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\350\250\230\345\217\267" }
+question { nf { stream: "word" s_position: 0 feature: "word_pos_from_user_features" } sval: "\351\200\243\344\275\223\350\251\236" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "UNKNOWN" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\343\201\235\343\201\256\344\273\226" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\343\203\225\343\202\243\343\203\251\343\203\274" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\345\211\257\350\251\236" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\345\212\251\345\213\225\350\251\236" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\345\212\251\350\251\236" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\345\213\225\350\251\236" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\345\220\215\350\251\236" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\345\275\242\345\256\271\350\251\236" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\346\204\237\345\213\225\350\251\236" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\346\216\245\347\266\232\350\251\236" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\346\216\245\351\240\255\350\251\236" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\350\250\230\345\217\267" }
+question { nf { stream: "word" s_position: 1 feature: "word_pos_from_user_features" } sval: "\351\200\243\344\275\223\350\251\236" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "UNKNOWN" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\343\201\235\343\201\256\344\273\226" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\343\203\225\343\202\243\343\203\251\343\203\274" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\345\211\257\350\251\236" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\345\212\251\345\213\225\350\251\236" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\345\212\251\350\251\236" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\345\213\225\350\251\236" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\345\220\215\350\251\236" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\345\275\242\345\256\271\350\251\236" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\346\204\237\345\213\225\350\251\236" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\346\216\245\347\266\232\350\251\236" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\346\216\245\351\240\255\350\251\236" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\350\250\230\345\217\267" }
+question { nf { stream: "word" s_position: 2 feature: "word_pos_from_user_features" } sval: "\351\200\243\344\275\223\350\251\236" }
+nf { stream: "phoneme" s_position: 0 feature: "num_preceding_phonemes_in_syllable" type: INT }
+nf { stream: "phoneme" s_position: 0 feature: "num_preceding_phonemes_in_word" type: INT }
+nf { stream: "phoneme" s_position: 0 feature: "num_succeeding_phonemes_in_syllable" type: INT }
+nf { stream: "phoneme" s_position: 0 feature: "num_succeeding_phonemes_in_word" type: INT }
+nf { stream: "phrase" s_position: 0 feature: "num_syllables" type: INT }
+nf { stream: "phrase" s_position: 1 feature: "num_syllables" type: INT }
+nf { stream: "phrase" s_position: 2 feature: "num_syllables" type: INT }
+nf { stream: "phrase" s_position: 0 feature: "num_words" type: INT }
+nf { stream: "phrase" s_position: 1 feature: "num_words" type: INT }
+nf { stream: "phrase" s_position: 2 feature: "num_words" type: INT }
+nf { stream: "specification" s_position: 0 feature: "num_phrases_in_sentence" type: INT }
+nf { stream: "syllable" s_position: 0 feature: "num_phonemes" type: INT }
+nf { stream: "syllable" s_position: 1 feature: "num_phonemes" type: INT }
+nf { stream: "syllable" s_position: 2 feature: "num_phonemes" type: INT }
+nf { stream: "syllable" s_position: 0 feature: "num_preceding_morae_in_pitch_accent_phrase" type: INT }
+nf { stream: "syllable" s_position: 0 feature: "num_preceding_morae_to_pitch_accent_nuclear" type: INT }
+nf { stream: "syllable" s_position: 0 feature: "num_preceding_syllables_in_phrase" type: INT }
+nf { stream: "syllable" s_position: 0 feature: "num_preceding_syllables_in_word" type: INT }
+nf { stream: "syllable" s_position: 0 feature: "num_succeeding_morae_in_pitch_accent_phrase" type: INT }
+nf { stream: "syllable" s_position: 0 feature: "num_succeeding_morae_to_pitch_accent_nuclear" type: INT }
+nf { stream: "syllable" s_position: 0 feature: "num_succeeding_syllables_in_phrase" type: INT }
+nf { stream: "syllable" s_position: 0 feature: "num_succeeding_syllables_in_word" type: INT }
+nf { stream: "word" s_position: 0 feature: "num_preceding_content_words_in_phrase" type: INT }
+nf { stream: "word" s_position: 0 feature: "num_preceding_silences_in_sentence" type: INT }
+nf { stream: "word" s_position: 0 feature: "num_preceding_words_in_phrase" type: INT }
+nf { stream: "word" s_position: 0 feature: "num_succeeding_content_words_in_phrase" type: INT }
+nf { stream: "word" s_position: 0 feature: "num_succeeding_silences_in_sentence" type: INT }
+nf { stream: "word" s_position: 0 feature: "num_succeeding_words_in_phrase" type: INT }
+nf { stream: "word" s_position: 0 feature: "num_syllables" type: INT }
+nf { stream: "word" s_position: 1 feature: "num_syllables" type: INT }
+nf { stream: "word" s_position: 2 feature: "num_syllables" type: INT }
+nf { stream: "word" s_position: 0 feature: "num_words_to_next_content_word_in_phrase" type: INT }
+nf { stream: "word" s_position: 0 feature: "num_words_to_previous_content_word_in_phrase" type: INT }
+nf { stream: "word" s_position: 0 feature: "word_pitch_accent" type: INT }
+nf { stream: "word" s_position: 1 feature: "word_pitch_accent" type: INT }
+nf { stream: "word" s_position: 2 feature: "word_pitch_accent" type: INT }

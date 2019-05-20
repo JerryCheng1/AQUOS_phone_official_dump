@@ -1,0 +1,436 @@
+stream {
+  name: "input"
+  classname: "CopyStream"
+}
+stream {
+  name: "rewrite_simple"
+  classname: "RewriteStream"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      rewrite_algo_ref: "rewrite_algo"
+    }
+  }
+}
+stream {
+  name: "japanese_tokenizer_mozc"
+  classname: "JapaneseTokenizerMozcStream"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      japanese_tokenizer_mozc_ref: "japanese_tokenizer_mozc_data"
+    }
+  }
+}
+stream {
+  name: "classify_kestrel"
+  classname: "ClassifyGrmStream"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      grm_far_ref: "classify_grm_fst"
+      phonology_ref: "phonology"
+      lexicon_ref: "combined_lexicon"
+    }
+  }
+}
+stream {
+  name: "japanese_transliterator"
+  classname: "JapaneseTransliteratorStream"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      grm_far_ref: "japanese_transliterator_grm_fst"
+    }
+  }
+}
+stream {
+  name: "verbalize_kestrel"
+  classname: "VerbalizeGrmStream"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      verbalize_grm_algo_ref: "verbalize_grm_algo"
+    }
+  }
+}
+stream {
+  name: "japanese_number_suffix_word_modifier"
+  classname: "JapaneseNumberSuffixWordModifierStream"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      japanese_number_suffix_word_modifier_ref: "japanese_suffix_word_data"
+    }
+  }
+}
+stream {
+  name: "japanese_accent_modifier"
+  classname: "JapaneseAccentModifierStream"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      japanese_accent_modifier_ref: "japanese_accent_labeler_model"
+    }
+  }
+}
+stream {
+  name: "japanese_pronounce2"
+  classname: "JapanesePronounce2Stream"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      phonology_ref: "phonology"
+      japanese_pronounce_ref: "japanese_phrase_pronounce_data"
+    }
+  }
+}
+stream {
+  name: "add_specification"
+  classname: "AddSpecificationStream"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      add_specification_ref: "add_specification_resource"
+    }
+  }
+}
+stream {
+  name: "new_utterance_to_patts2_converter"
+  classname: "NewUtteranceToPatts2ConverterStream"
+}
+stream {
+  name: "patts2_utterance_to_pronounce_event"
+  classname: "Patts2UtteranceToEventStream"
+  params {
+    [speech.tts.UtteranceToEventParams.id] {
+      event_type: TTS_EVENT_PRONUNCIATIONS_READY
+    }
+  }
+}
+stream {
+  name: "hmm"
+  classname: "Patts1HybridSynthesizerStream"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      phonology_ref: "phonology"
+      treemap_config_ref: "treemap_config"
+      patts1_hybrid_synth_ref: "hybrid_synthesizer"
+    }
+  }
+}
+stream {
+  name: "controller_events"
+  classname: "CopyStream"
+}
+connect {
+  from: "input"
+  to: "rewrite_simple"
+}
+connect {
+  from: "rewrite_simple"
+  to: "japanese_tokenizer_mozc"
+}
+connect {
+  from: "japanese_tokenizer_mozc"
+  to: "classify_kestrel"
+}
+connect {
+  from: "classify_kestrel"
+  to: "japanese_transliterator"
+}
+connect {
+  from: "japanese_transliterator"
+  to: "verbalize_kestrel"
+}
+connect {
+  from: "verbalize_kestrel"
+  to: "japanese_number_suffix_word_modifier"
+}
+connect {
+  from: "japanese_number_suffix_word_modifier"
+  to: "japanese_accent_modifier"
+}
+connect {
+  from: "japanese_accent_modifier"
+  to: "japanese_pronounce2"
+}
+connect {
+  from: "japanese_pronounce2"
+  to: "add_specification"
+}
+connect {
+  from: "add_specification"
+  to: "new_utterance_to_patts2_converter"
+}
+connect {
+  from: "new_utterance_to_patts2_converter"
+  to: "patts2_utterance_to_pronounce_event"
+}
+connect {
+  from: "patts2_utterance_to_pronounce_event"
+  to: "hmm"
+}
+connect {
+  from: "hmm"
+  to: "controller_events"
+}
+resource {
+  name: "voice_params"
+  classname: "VoiceParams"
+  params {
+    [speech.tts.VoiceParams.id] {
+      description: "Blaze-generated greco_hmm_phone voice for ja_jp (speaker htm; sample rate 22050; size android)"
+      language: "ja"
+      region: "jp"
+      speaker: "htm"
+      gender: "female"
+      quality: "normal"
+      sample_rate: 22050
+      server_voice_name: "htm-phone-hmm"
+      supports_set_sample_rate: false
+      multi_speaker: false
+    }
+  }
+}
+resource {
+  name: "phonology"
+  classname: "Phonology"
+  params {
+    [speech.tts.DataSourceParams.id] {
+      path: "phonology.pb"
+      type: FILE
+    }
+  }
+}
+resource {
+  name: "utf8_utils"
+  classname: "Utf8UtilsResource"
+  params {
+    [speech.tts.Utf8UtilsResourceParams.id] {
+      phonology_ref: "phonology"
+    }
+  }
+}
+resource {
+  name: "verbalize_grm_fst"
+  classname: "GrmManager"
+  params {
+    [speech.tts.GrmFarResourceParams.id] {
+      fst_names: "ALL"
+      data_source {
+        path: "verbalize_android.far"
+        type: FILE
+      }
+    }
+  }
+}
+resource {
+  name: "tokenize_grm_fst"
+  classname: "GrmManager"
+  params {
+    [speech.tts.GrmFarResourceParams.id] {
+      fst_names: "TOKENIZE"
+      data_source {
+        path: "tokenize_ja_android.far"
+        type: FILE
+      }
+    }
+  }
+}
+resource {
+  name: "serialization_spec"
+  classname: "SerializeSpec"
+  params {
+    [speech.tts.DataSourceParams.id] {
+      path: "ja_verbalize_spec.pb"
+      type: FILE
+    }
+  }
+}
+resource {
+  name: "rewrite_grm_fst"
+  classname: "GrmManager"
+  params {
+    [speech.tts.GrmFarResourceParams.id] {
+      fst_names: "REWRITE"
+      data_source {
+        path: "rewrite_android.far"
+        type: FILE
+      }
+    }
+  }
+}
+resource {
+  name: "add_specification_resource"
+  classname: "AddSpecificationResource"
+  params {
+    [speech.tts.AddSpecificationResourceParams.id] {
+      phonology_ref: "phonology"
+      data_source {
+        path: "phoneme_hmm.params"
+        type: FILE
+      }
+      feature_set_type: HMM
+      specification_type: PARAMETRIC_SYNTHESIS
+    }
+  }
+}
+resource {
+  name: "combined_lexicon"
+  classname: "LexiconResource"
+  params {
+    [speech.tts.LexiconResourceParams.id] {
+      data_source {
+        path: "compressed_lexicon_ja_jp.blex"
+        type: FILE
+      }
+      phonology_ref: "phonology"
+    }
+  }
+}
+resource {
+  name: "japanese_transliterator_grm_fst"
+  classname: "GrmManager"
+  params {
+    [speech.tts.GrmFarResourceParams.id] {
+      fst_names: "EN_TO_JA_PHONEMES"
+      fst_names: "JA_PHONEMES_TO_HIRAGANA"
+      fst_names: "ROMAJI"
+      data_source {
+        path: "translit_android.far"
+        type: FILE
+      }
+    }
+  }
+}
+resource {
+  name: "japanese_tokenizer_mozc_data"
+  classname: "JapaneseTokenizerMozc"
+  params {
+    [speech.tts.JapaneseTokenizerMozcResourceParams.id] {
+      ref {
+        grm_far_ref: "tokenize_grm_fst"
+      }
+      dict {
+        path: "mozc_dictionary_embedded.bin"
+        type: FILE
+      }
+    }
+  }
+}
+resource {
+  name: "japanese_suffix_word_data"
+  classname: "NumberSuffixWordModifier"
+  params {
+    [speech.tts.DataSourceParams.id] {
+      path: "suffix_word_verbalizer_rules.pb"
+      type: FILE
+    }
+  }
+}
+resource {
+  name: "japanese_phrase_pronounce_data"
+  classname: "JapanesePhrasePronounce"
+  params {
+    [speech.tts.JapanesePronounceResourceParams.id] {
+      mora_phonemes {
+        path: "phonemes_table.txt"
+        type: FILE
+      }
+    }
+  }
+}
+resource {
+  name: "japanese_accent_labeler_model"
+  classname: "CRFAccentLabeler"
+  params {
+    [speech.tts.DataSourceParams.id] {
+      path: "accent_labeler_mozc_embedded.model"
+      type: FILE
+    }
+  }
+}
+resource {
+  name: "treemap_config"
+  classname: "TreeMapConfigResource"
+  params {
+    [speech.tts.TreeMapConfigResourceParams.id] {
+      data_sources {
+        path: "phonology.cfg"
+        type: FILE
+      }
+      data_sources {
+        path: "compile_hmm_phoneme.cfg"
+        type: FILE
+      }
+      data_sources {
+        path: "engine_hmm_22050_vocaine-embedded_mcep.cfg"
+        type: FILE
+      }
+    }
+  }
+}
+resource {
+  name: "hmm_voice"
+  classname: "HmmVoiceResource"
+  params {
+    [speech.tts.HmmVoiceResourceParams.id] {
+      data_source {
+        path: "greco_hmm_voice_ja_jp_htm_android_22050_phoneme_mcep_swop_ap_msd_bin_8bit.voice"
+        type: FILE
+      }
+      treemap_config_ref: "treemap_config"
+    }
+  }
+}
+resource {
+  name: "engine_config"
+  classname: "EngineConfig"
+  params {
+    [speech.tts.DataSourceParams.id] {
+      path: "engine_config_ja_jp.pb"
+      type: FILE
+    }
+  }
+}
+resource {
+  name: "classify_grm_fst"
+  classname: "GrmManager"
+  params {
+    [speech.tts.GrmFarResourceParams.id] {
+      fst_names: "CLASSIFY"
+      data_source {
+        path: "classify_android.far"
+        type: FILE
+      }
+    }
+  }
+}
+resource {
+  name: "hybrid_synthesizer"
+  classname: "Patts1HybridSynthesizerResource"
+  params {
+    [speech.tts.Patts1HybridSynthesizerResourceParams.id] {
+      treemap_config_ref: "treemap_config"
+      hmm_voice_ref: "hmm_voice"
+      use_linguistic_builder: false
+    }
+  }
+}
+resource {
+  name: "verbalize_grm_algo"
+  classname: "VerbalizeGrm"
+  params {
+    [speech.tts.ResourceReferenceParams.id] {
+      grm_far_ref: "verbalize_grm_fst"
+      phonology_ref: "phonology"
+      lexicon_ref: "combined_lexicon"
+      engine_config_ref: "engine_config"
+      serialization_spec_ref: "serialization_spec"
+    }
+  }
+}
+resource {
+  name: "rewrite_algo"
+  classname: "Rewrite"
+  params {
+    [speech.tts.RewriteResourceParams.id] {
+      ref {
+        grm_far_ref: "rewrite_grm_fst"
+        engine_config_ref: "engine_config"
+      }
+    }
+  }
+}

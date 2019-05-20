@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<menu_settings>
+    <preset_menu_setting>
+        <text_ja>共有</text_ja>
+        <text_en>Share</text_en>
+        <preset_action>KDDI_ADDRESS_MENU_SHARE</preset_action>
+    </preset_menu_setting>
+    <preset_menu_setting>
+        <text_ja>ショートカットを作成</text_ja>
+        <text_en>Create shortcut</text_en>
+        <preset_action>KDDI_ADDRESS_MENU_SHORTCUT</preset_action>
+    </preset_menu_setting>
+    <join_setting>
+        <text_ja>統合</text_ja>
+        <text_en>Join</text_en>
+        <package_context>jp.co.sharp.android.addressbook.app</package_context>
+        <activity_name>jp.co.sharp.android.addressbook.app.JoinDivideActivity</activity_name>
+        <action>jp.co.sharp.android.addressbook.action.ADDRESSBOOK_PLUS_JOIN</action>
+    </join_setting>
+    <split_setting>
+        <text_ja>分割</text_ja>
+        <text_en>Separate</text_en>
+        <package_context>jp.co.sharp.android.addressbook.app</package_context>
+        <activity_name>jp.co.sharp.android.addressbook.app.JoinDivideActivity</activity_name>
+        <action>jp.co.sharp.android.addressbook.action.ADDRESSBOOK_PLUS_DIVIDE</action>
+    </split_setting>
+    <edit_setting>
+        <text_ja>編集</text_ja>
+        <text_en>Edit</text_en>
+        <package_context>jp.co.sharp.android.addressbook.app</package_context>
+        <activity_name>jp.co.sharp.android.addressbook.app.JoinDivideActivity</activity_name>
+        <action>jp.co.sharp.android.addressbook.action.ADDRESSBOOK_PLUS_EDIT</action>
+    </edit_setting>
+    <custom_menu_setting>
+        <text_ja>着信音設定内容</text_ja>
+        <text_en>Ring Set</text_en>
+        <package_context>jp.co.sharp.android.addressbook.app</package_context>
+        <activity_name>jp.co.sharp.android.addressbook.app.JoinDivideActivity</activity_name>
+        <action>jp.co.sharp.android.addressbook.action.ADDRESSBOOK_PLUS_RINGTONE</action>
+    </custom_menu_setting>
+    <custom_menu_setting>
+        <text_ja>削除</text_ja>
+        <text_en>Delete</text_en>
+        <package_context>jp.co.sharp.android.addressbook.app</package_context>
+        <activity_name>jp.co.sharp.android.addressbook.app.JoinDivideActivity</activity_name>
+        <action>jp.co.sharp.android.addressbook.action.ADDRESSBOOK_PLUS_DELETE</action>
+    </custom_menu_setting>
+</menu_settings>

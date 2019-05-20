@@ -1,0 +1,9 @@
+service media /system/bin/mediaserver
+    class main
+    user media
+# SH_AUDIO_DRIVER-> 24-038
+#    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm
+    group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm system
+# SH_AUDIO_DRIVER<- 24-038
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks

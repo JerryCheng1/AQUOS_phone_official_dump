@@ -1,0 +1,84 @@
+# Mandatory identifiers of language and region
+language: "ja"
+region: "JP"
+
+#Definitions of the phoneme set with distinctive features.
+# Vowels
+phoneme_def {name: "a"  vowel: true rounded: false length: SHORT height: OPEN     position: CENTRAL}
+phoneme_def {name: "e"  vowel: true rounded: false length: SHORT height: MID      position: FRONT}
+phoneme_def {name: "i"  vowel: true rounded: false length: SHORT height: CLOSE    position: FRONT}
+phoneme_def {name: "o"  vowel: true rounded: true  length: SHORT height: OPENMID  position: NEARBACK}
+phoneme_def {name: "u"  vowel: true rounded: false length: SHORT height: CLOSEMID position: NEARBACK}
+
+phoneme_def {name: "aa"  vowel: true rounded: false length: LONG height: OPEN     position: CENTRAL}
+phoneme_def {name: "ee"  vowel: true rounded: false length: LONG height: MID      position: FRONT}
+phoneme_def {name: "ii"  vowel: true rounded: false length: LONG height: CLOSE    position: FRONT}
+phoneme_def {name: "oo"  vowel: true rounded: true  length: LONG height: OPENMID  position: NEARBACK}
+phoneme_def {name: "uu"  vowel: true rounded: false length: LONG height: CLOSEMID position: NEARBACK}
+
+# Consonants which can be a mora in Japanese.  N: syllabic nasal, Q: sokuon.
+# Special phonemes for syllabic nasal, and sokuon.  As the phonology system
+# insists on a vowel for every syllable, we must classify single phoneme
+# syllables as vowels.
+# TODO(heigazen) find a better way to categorize them in phonology.param, or
+# switch to fully syllable-based system; currently mora is treated as syllable.
+# If we switch to syllable, this is not required.  The tricky part will be how
+# to encode pitch accent change within syllable.  It will be something like
+# tone in tonal languages.
+phoneme_def {name: "N" vowel: true rounded: false length: SHORT height: NEARCLOSE position: NEARFRONT manner: NASAL poa: ALVEOLAR voiced: true  syllabic_consonant: true}
+phoneme_def {name: "Q" vowel: true rounded: false length: SHORT height: NEARCLOSE position: NEARFRONT manner: STOP                voiced: false syllabic_consonant: true}
+
+# Stops
+phoneme_def {name: "p"  vowel: false poa: LABIAL    manner: STOP  voiced: false}
+phoneme_def {name: "t"  vowel: false poa: ALVEOLAR  manner: STOP  voiced: false}
+phoneme_def {name: "k"  vowel: false poa: VELAR     manner: STOP  voiced: false}
+phoneme_def {name: "b"  vowel: false poa: LABIAL    manner: STOP  voiced: true}
+phoneme_def {name: "d"  vowel: false poa: ALVEOLAR  manner: STOP  voiced: true}
+phoneme_def {name: "g"  vowel: false poa: VELAR     manner: STOP  voiced: true}
+
+# Fricatives
+phoneme_def {name: "s"  vowel: false poa: ALVEOLAR      manner: FRICATIVE voiced: false}
+phoneme_def {name: "sh" vowel: false poa: POSTALVEOLAR  manner: FRICATIVE voiced: false}
+phoneme_def {name: "z"  vowel: false poa: ALVEOLAR      manner: FRICATIVE voiced: true}
+phoneme_def {name: "h"  vowel: false poa: GLOTTAL       manner: FRICATIVE voiced: false}
+phoneme_def {name: "f"  vowel: false poa: LABIAL        manner: FRICATIVE voiced: false}
+
+# Approximants
+phoneme_def {name: "r"  vowel: false poa: ALVEOLAR  manner: APPROXIMANT voiced: true }
+phoneme_def {name: "y"  vowel: false poa: PALATAL   manner: APPROXIMANT voiced: true }
+phoneme_def {name: "w"  vowel: false poa: VELAR     manner: APPROXIMANT voiced: true }
+
+# Nasals
+phoneme_def {name: "m"  vowel: false poa: LABIAL    manner: NASAL voiced: true }
+phoneme_def {name: "n"  vowel: false poa: ALVEOLAR  manner: NASAL voiced: true }
+
+# Affricates
+phoneme_def {name: "j"  vowel: false poa: POSTALVEOLAR manner: AFFRICATE voiced: true}
+phoneme_def {name: "ch" vowel: false poa: POSTALVEOLAR manner: AFFRICATE voiced: false }
+phoneme_def {name: "ts" vowel: false poa: ALVEOLAR     manner: AFFRICATE voiced: false}
+
+# Definitons of which vowels take which stress values.
+
+stress_def {stress: 0 vowels: "a e i o u N Q aa ee ii oo uu"}
+stress_def {stress: 1 vowels: "a e i o u N Q aa ee ii oo uu"}
+
+# TODO(mpodsiadlo): confirm if this is correct.
+single_primary_stress_required: false
+
+# Definitions of legal onsets. Each group defines a set of phonemes
+# which are permissible in that position.
+
+# Single phoneme onsets - any of these can start a syllable
+onset {group: "m n p b t d k g s z h r w y j sh ch f ts" }
+
+# Two phoneme onsets
+onset {group: "m n p b t d k g h r f z ts j sh s ch" group: "w y"}
+onset {group: "y" group: "w"}
+
+# Single phoneme codas
+coda {group:  "" }
+
+legalizing_vowel: "a"
+wordid_definition: "[\\p{Hiragana}ー]+_[0-9]+|sil"
+spelling_definition: "[\\p{Hiragana}ー]+"
+

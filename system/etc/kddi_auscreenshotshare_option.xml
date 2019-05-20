@@ -1,0 +1,17 @@
+<setting>
+    <debug>
+<!--
+        <define name="image_save_date" value="20150302_000000" />
+        <define name="image_save_path" value="/storage/sdcard0/test" />
+        <flag name="share_not_found" value="true" />
+-->
+    </debug>
+    <init-share-menu>
+        <!-- Facebook -->
+        <share-item package="com.facebook.katana" class="com.facebook.composer.shareintent.ImplicitShareIntentHandler" />
+        
+        <!-- ISP Mail -->
+        <share-item package="com.kddi.android.email" class="com.kddi.android.email.system.ComposerStarter" />
+        
+    </init-share-menu>
+</setting>

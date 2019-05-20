@@ -1,0 +1,9 @@
+service mediadrm /system/bin/mediadrmserver
+    class main
+    user media
+# SHARP_EXTEND PlayReady [PR-2][PR-4][PR-18] Start #
+#    group mediadrm drmrpc
+    group mediadrm drmrpc system inet
+# SHARP_EXTEND PlayReady [PR-2][PR-4][PR-18] End #
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks

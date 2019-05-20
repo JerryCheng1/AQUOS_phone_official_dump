@@ -1,0 +1,83 @@
+# Features for embedded phone HMM voices.
+
+unit_type: PHONE
+context_size: 1  # Triphones
+is_supra_segmental: false
+
+#
+# Phonology features.
+#
+
+feature: { nf: { stream: "phoneme" s_position: -1 feature: "vowel" } type: BOOL }
+feature: { nf: { stream: "phoneme" s_position: 0  feature: "vowel" } type: BOOL }
+feature: { nf: { stream: "phoneme" s_position: 1  feature: "vowel" } type: BOOL }
+
+feature: { nf: { stream: "phoneme" s_position: -1 feature: "voiced" } type: BOOL }
+feature: { nf: { stream: "phoneme" s_position: 0  feature: "voiced" } type: BOOL }
+feature: { nf: { stream: "phoneme" s_position: 1  feature: "voiced" } type: BOOL }
+
+feature: { nf: { stream: "phoneme" s_position: -1 feature: "closed_syllable" } type: BOOL }
+feature: { nf: { stream: "phoneme" s_position: 0  feature: "closed_syllable" } type: BOOL }
+feature: { nf: { stream: "phoneme" s_position: 1  feature: "closed_syllable" } type: BOOL }
+
+feature: { nf: { stream: "phoneme" s_position: -1 feature: "schwa" } type: BOOL }
+feature: { nf: { stream: "phoneme" s_position: 0  feature: "schwa" } type: BOOL }
+feature: { nf: { stream: "phoneme" s_position: 1  feature: "schwa" } type: BOOL }
+
+feature: { nf: { stream: "phoneme" s_position: -1 feature: "poa" } type: INT }
+feature: { nf: { stream: "phoneme" s_position: 0  feature: "poa" } type: INT }
+feature: { nf: { stream: "phoneme" s_position: 1  feature: "poa" } type: INT }
+
+feature: { nf: { stream: "phoneme" s_position: -1 feature: "position" } type: INT }
+feature: { nf: { stream: "phoneme" s_position: 0  feature: "position" } type: INT }
+feature: { nf: { stream: "phoneme" s_position: 1  feature: "position" } type: INT }
+
+feature: { nf: { stream: "phoneme" s_position: -1 feature: "length" } type: INT }
+feature: { nf: { stream: "phoneme" s_position: 0  feature: "length" } type: INT }
+feature: { nf: { stream: "phoneme" s_position: 1  feature: "length" } type: INT }
+
+feature: { nf: { stream: "phoneme" s_position: -1 feature: "height" } type: INT }
+feature: { nf: { stream: "phoneme" s_position: 0  feature: "height" } type: INT }
+feature: { nf: { stream: "phoneme" s_position: 1  feature: "height" } type: INT }
+
+feature: { nf: { stream: "phoneme" s_position: -1 feature: "manner" } type: INT }
+feature: { nf: { stream: "phoneme" s_position: 0  feature: "manner" } type: INT }
+feature: { nf: { stream: "phoneme" s_position: 1  feature: "manner" } type: INT }
+
+#
+# Syllable features.
+#
+
+# Values handled via phonology definitions.
+feature: { regexp_tag: "A" nf: { stream: "syllable" s_position: -1 feature: "stress" } type: INT }
+feature: { regexp_tag: "A" nf: { stream: "syllable" s_position: 0  feature: "stress" } type: INT }
+feature: { regexp_tag: "A" nf: { stream: "syllable" s_position: 1  feature: "stress" } type: INT }
+
+#
+# Word features.
+#
+
+# Values handled via linguistic_features.cc
+feature: { regexp_tag: "B" nf: { stream: "word" s_position: -1 feature: "word_type" } type: STRING cache_values: true }
+feature: { regexp_tag: "B" nf: { stream: "word" s_position: 0  feature: "word_type" } type: STRING cache_values: true }
+feature: { regexp_tag: "B" nf: { stream: "word" s_position: 1  feature: "word_type" } type: STRING cache_values: true }
+
+#
+# Custom features.
+#
+
+feature: { regexp_tag: "C" custom { feature: "phone_position" }            type: STRING  cache_values: true }
+feature: { regexp_tag: "D" custom { feature: "phrasing" }                  type: STRING  cache_values: true }
+feature: { regexp_tag: "E" custom { feature: "sonorant_pollution" }        type: STRING  cache_values: true }
+
+# These lines are disabled because otherwise because the labels introduce
+# a lot of different models, making the HMM files too big for blaze.
+#feature: { regexp_tag: "F" custom { feature: "num_phrases_in_sentence" }   type: INT    numerical { max: 5 } }
+#feature: { regexp_tag: "G" custom { feature: "num_words_in_sentence" }     type: INT    numerical { max: 15 } }
+#feature: { regexp_tag: "H" custom { feature: "num_syllables_in_sentence" } type: INT    numerical { max: 25 } }
+
+# These lines are disabled because they are not available at runtime (requires parser).
+# feature: { regexp_tag: "I" custom { feature: "syntactic_linkage_to_left" }  type: STRING cache_values: true }
+# feature: { regexp_tag: "J" custom { feature: "syntactic_linkage_to_right" } type: STRING cache_values: true }
+# feature: { regexp_tag: "K" custom { feature: "offset_from_nucleus" }        type: INT    numerical { max: 2 min: -2 } }
+# feature: { regexp_tag: "L" custom { feature: "intonation_type" }              type: STRING cache_values: true }

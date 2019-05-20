@@ -1,0 +1,4 @@
+# SHARP_EXTEND Policy Write task log. [OTHER-13] 2016.09.07 Start
+on post-fs-data
+    mkdir /durable/htemp 0770 root system
+# SHARP_EXTEND Policy Write task log. [OTHER-13] End

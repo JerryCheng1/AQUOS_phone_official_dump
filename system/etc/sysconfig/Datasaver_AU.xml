@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <allow-in-data-usage-save package="com.kddi.android.email" />
+    <allow-in-data-usage-save package="com.kddi.android.cmail" />
+    <allow-in-data-usage-save package="com.kddi.android.auoneidsetting" />
+    <allow-in-data-usage-save package="com.kddi.market" />
+    <allow-in-data-usage-save package="com.kddi.android.btdun" />
+    <allow-in-data-usage-save package="com.gemalto.tsmproxy" />
+    <allow-in-data-usage-save package="com.kddi.android.klop" />
+    <allow-in-data-usage-save package="com.kddi.android.evc" />
+    <allow-in-data-usage-save package="com.kddi.disasterapp" />
+    <allow-in-data-usage-save package="com.kddi.android.mamoru" />
+    <allow-in-data-usage-save package="jp.co.optim.oru" />
+    <allow-in-data-usage-save package="com.kddi.android.checker_android" />
+    <allow-in-data-usage-save package="jp.netstar.familysmile" />
+    <allow-in-data-usage-save package="com.kddi.android.au_wifi_connect2" />
+    <allow-in-data-usage-save package="com.redbend.shclient" />
+</config>

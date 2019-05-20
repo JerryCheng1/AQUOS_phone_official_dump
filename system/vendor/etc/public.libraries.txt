@@ -1,0 +1,16 @@
+libOpenCL.so
+libqti_performance.so
+libqti-perfd-client.so
+lib-ims-rcscmjni.so
+lib-imsrcscm.so
+lib-imsrcscmclient.so
+lib-imsrcscmservice.so
+# SHARP_EXTEND add vobjectlib to public native libraries start
+libvobjectlib.so
+# SHARP_EXTEND add vobjectlib to public native libraries end
+# KDDI ISP adding start #
+libuimmdl.so
+# KDDI ISP adding end #
+# KDDI SDA adding start #
+libaudiohookclient.so
+# KDDI SDA adding end #

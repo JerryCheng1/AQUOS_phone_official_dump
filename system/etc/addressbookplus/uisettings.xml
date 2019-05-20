@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<ui_settings>
+
+  <notification_ui>
+    <portrait_width>1032</portrait_width>
+    <landscape_width>1200</landscape_width>
+  </notification_ui>
+
+  <detailscreen_ui>
+    <default_thumbnail>/system/etc/addressbookplus/img_mini_image_00.png</default_thumbnail>
+    <actionbar_background_color>#3F51B5</actionbar_background_color>
+    <actionbar_icon_color>#ffffff</actionbar_icon_color>
+    <actionbar_icon_focus_color>#ffffff</actionbar_icon_focus_color>
+    <header_background_color>#eaeaea</header_background_color>
+    <header_font_color>#4d4d4d</header_font_color>
+    <category_background_color>#e1e1e1</category_background_color>
+    <category_font_color>#4d4d4d</category_font_color>
+    <list_background_color>#eaeaea</list_background_color>
+    <list_font_color>#4d4d4d</list_font_color>
+    <list_focus_color>#909090</list_focus_color>
+    <list_separator_color>#cbcbcb</list_separator_color>
+    <button_background_color>#fbfbfb</button_background_color>
+    <button_icon_color>#6e6e6e</button_icon_color>
+    <button_focus_color>#909090</button_focus_color>
+    <main_icon_color>#424246</main_icon_color>
+    <checkbox_color>#424246</checkbox_color>
+  </detailscreen_ui>
+  <popup_ui>
+    <tab_icon_color>#424246</tab_icon_color>
+    <tab_icon_color_disable>#bdbdbd</tab_icon_color_disable>
+    <tab_background_color>#fafafa</tab_background_color>
+    <tab_focus_color>#000000</tab_focus_color>
+  </popup_ui>
+
+</ui_settings>

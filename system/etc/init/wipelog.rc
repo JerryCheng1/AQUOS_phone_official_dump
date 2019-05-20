@@ -1,0 +1,4 @@
+# SHARP_EXTEND Write wipe log. [DPM-6] 2015.01.08 Start
+on post-fs-data
+    mkdir /durable/wipelog 0700 system system
+# SHARP_EXTEND Write wipe log. [DPM-6] End

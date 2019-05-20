@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<preferred-activities>
+        <item name="jp.co.sharp.android.picturemanager/.media.PictureManager">
+            <filter>
+                <action name="android.intent.action.VIEW" />
+                <cat name="android.intent.category.DEFAULT" />
+                <type name="image/x-ms-bmp" />
+                <type name="image/png" />
+                <type name="image/gif" />
+                <type name="image/webp" />
+                <type name="image/jpeg" />
+                <type name="image/vnd.wap.wbmp" />
+                <type name="image/bmp" />
+                <type name="image/jpg" />
+                <type name="application/vnd.google.panorama360+jpg" />
+            </filter>
+        </item>
+</preferred-activities>

@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<category_settings>
+    <category>
+        <mimetype>vnd.android.cursor.item/phone_v2</mimetype>
+        <category_title_ja>電話番号</category_title_ja>
+        <category_title_en>Phone number</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>発信</text_ja>
+            <text_en>Call</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_CALL</preset_action>
+        </preset_context_menu_setting>
+        <custom_context_menu_setting>
+            <text_ja>プッシュトーン送信</text_ja>
+            <text_en>Send push tone</text_en>
+            <package_context>jp.co.sharp.android.addressbook.app</package_context>
+            <service_name>jp.co.sharp.android.addressbook.app.AddressBookPlusWrapperService</service_name>
+            <action>jp.co.sharp.android.addressbook.action.ADDRESSBOOK_PLUS_SEND_PUSH_TONE</action>
+            <key>CALL_NUMBER</key>
+        </custom_context_menu_setting>
+        <preset_context_menu_setting>
+            <text_ja>SMS作成</text_ja>
+            <text_en>Create SMS</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_SMSTO</preset_action>
+        </preset_context_menu_setting>
+        <custom_context_menu_setting>
+            <text_ja>特番付加発信</text_ja>
+            <text_en>Call added special number</text_en>
+            <package_context>jp.co.sharp.android.addressbook.app</package_context>
+            <service_name>jp.co.sharp.android.addressbook.app.AddressBookPlusWrapperService</service_name>
+            <action>jp.co.sharp.android.addressbook.action.ADDRESSBOOK_PLUS_SPECIAL_CALL</action>
+            <key>CALL_NUMBER</key>
+        </custom_context_menu_setting>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+        <preset_context_menu_setting>
+            <text_ja>メインの電話番号に設定</text_ja>
+            <text_en>Set main phone number</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_SET_MAIN</preset_action>
+        </preset_context_menu_setting>
+        <preset_context_menu_setting>
+            <text_ja>メインの電話番号を解除</text_ja>
+            <text_en>Cancel main phone number</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_RELEASE_MAIN</preset_action>
+        </preset_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/email_v2</mimetype>
+        <category_title_ja>メールアドレス</category_title_ja>
+        <category_title_en>Mail address</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>メール作成</text_ja>
+            <text_en>Create mail</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_MAILTO</preset_action>
+        </preset_context_menu_setting>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+        <preset_context_menu_setting>
+            <text_ja>メインのアドレスに設定</text_ja>
+            <text_en>Set main mail address</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_SET_MAIN</preset_action>
+        </preset_context_menu_setting>
+        <preset_context_menu_setting>
+            <text_ja>メインのアドレスを解除</text_ja>
+            <text_en>Cancel main mail address</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_RELEASE_MAIN</preset_action>
+        </preset_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/group_membership</mimetype>
+        <category_title_ja>グループ</category_title_ja>
+        <category_title_en>Group</category_title_en>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/contact_event</mimetype>
+        <category_title_ja>日付</category_title_ja>
+        <category_title_en>Event</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/postal-address_v2</mimetype>
+        <category_title_ja>住所</category_title_ja>
+        <category_title_en>Residence</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>地図を見る</text_ja>
+            <text_en>Map address</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_MAPTO</preset_action>
+        </preset_context_menu_setting>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/im</mimetype>
+        <category_title_ja>チャットアドレス</category_title_ja>
+        <category_title_en>Chat address</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/nickname</mimetype>
+        <category_title_ja>ニックネーム</category_title_ja>
+        <category_title_en>Nickname</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>jp.co.sharp.gps</mimetype>
+        <category_title_ja>GPS情報</category_title_ja>
+        <category_title_en>GPS</category_title_en>
+        <custom_context_menu_setting>
+            <text_ja>地図を見る</text_ja>
+            <text_en>Map address</text_en>
+            <package_context>jp.co.sharp.android.addressbook.app</package_context>
+            <service_name>jp.co.sharp.android.addressbook.app.AddressBookPlusWrapperService</service_name>
+            <action>jp.co.sharp.android.addressbook.action.ADDRESSBOOK_PLUS_GPS</action>
+            <key>GPS_INFO</key>
+        </custom_context_menu_setting>
+        <custom_context_menu_setting>
+            <text_ja>メールで送信</text_ja>
+            <text_en>Create GPS mail</text_en>
+            <package_context>jp.co.sharp.android.addressbook.app</package_context>
+            <service_name>jp.co.sharp.android.addressbook.app.AddressBookPlusWrapperService</service_name>
+            <action>jp.co.sharp.android.addressbook.action.ADDRESSBOOK_PLUS_GPS_MAIL</action>
+            <key>GPS_INFO</key>
+        </custom_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/organization</mimetype>
+        <category_title_ja>所属</category_title_ja>
+        <category_title_en>Organization</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/website</mimetype>
+        <category_title_ja>ウェブサイト</category_title_ja>
+        <category_title_en>Website</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>ウェブサイトをみる</text_ja>
+            <text_en>Display website</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_URLTO</preset_action>
+        </preset_context_menu_setting>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/note</mimetype>
+        <category_title_ja>メモ</category_title_ja>
+        <category_title_en>Memo</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/contact_event</mimetype>
+        <category_title_ja>日付(記念日/予定)</category_title_ja>
+        <category_title_en>Event(Anniversary/Schedule)</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+    </category>
+
+    <category>
+        <mimetype>vnd.android.cursor.item/sip_address</mimetype>
+        <category_title_ja>インターネット通話</category_title_ja>
+        <category_title_en>Internet call</category_title_en>
+        <preset_context_menu_setting>
+            <text_ja>インターネット通話発信</text_ja>
+            <text_en>Make internet calls</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_SIPCALL</preset_action>
+        </preset_context_menu_setting>
+        <preset_context_menu_setting>
+            <text_ja>テキストとしてコピー</text_ja>
+            <text_en>Copy as text</text_en>
+            <preset_action>KDDI_ADDRESS_CONTEXTMENU_COPY</preset_action>
+        </preset_context_menu_setting>
+    </category>
+</category_settings>

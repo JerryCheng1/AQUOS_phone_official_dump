@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<permissions>
+    <permission name="jp.co.sharp.android.permission.SH_SELFCHECK" >
+        <group gid="self_check"/>
+    </permission>
+</permissions>
+

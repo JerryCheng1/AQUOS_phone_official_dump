@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <allow-in-power-save package="com.kddi.android.email" />
+    <allow-in-power-save package="com.kddi.android.cmail" />
+    <allow-in-power-save package="com.kddi.android.auoneidsetting" />
+    <allow-in-power-save package="com.kddi.market" />
+    <allow-in-power-save package="com.kddi.android.btdun" />
+    <allow-in-power-save package="com.gemalto.tsmproxy" />
+    <allow-in-power-save package="com.kddi.android.klop" />
+    <allow-in-power-save package="com.kddi.android.evc" />
+    <allow-in-power-save package="com.kddi.disasterapp" />
+    <allow-in-power-save package="com.kddi.android.mamoru" />
+    <allow-in-power-save package="jp.co.optim.oru" />
+    <allow-in-power-save package="com.kddi.android.checker_android" />
+    <allow-in-power-save package="jp.netstar.familysmile" />
+    <allow-in-power-save package="com.kddi.android.au_wifi_connect2" />
+    <allow-in-power-save package="com.redbend.shclient" />
+
+<!-- Whitelist of what components are permitted as backup data transports.  The
+     'service' attribute here is a flattened ComponentName string. -->
+    <backup-transport-whitelisted-service
+        service="com.kddi.android.extract/.WiFiSettingsExtractService" />
+    <backup-transport-whitelisted-service
+        service="com.kddi.android.extract/.HomeSettingsService" />
+</config>

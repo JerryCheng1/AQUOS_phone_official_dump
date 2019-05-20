@@ -1,0 +1,34 @@
+#!PA_PROJECT!#
+Description                    "Blaze-generated greco_hmm_phone voice for ja_jp (speaker htm, sample rate 22050, size android)";
+ServerVoiceName                "htm-phone-hmm";
+speaker                        "htm";
+sample_rate                    "22050";
+gender                         "female";
+subset                         "android";
+aligner                        "flatstart";
+language                       "ja";
+region                         "jp";
+quality                        "normal";
+supports_set_sample_rate       "false";
+pipeline                       "flatstart_greco_hmm_phone_ja_jp_htm_22050_android.pipeline";
+classify                       "classify_android.far";
+hmm_compile_params_file        "compile_hmm_phoneme.cfg";
+engine_config                  "engine_config_ja_jp.pb";
+hmm_engine_params_file         "engine_hmm_22050_vocaine-embedded_mcep.cfg";
+greco_hmm_voice                "greco_hmm_voice_ja_jp_htm_android_22050_phoneme_mcep_swop_ap_msd_bin_8bit.voice";
+japanese_accent_labeler_model  "accent_labeler_mozc_embedded.model";
+japanese_phrase_pronounce_data "phonemes_table.txt";
+japanese_suffix_word_data      "suffix_word_verbalizer_rules.pb";
+japanese_tokenizer_mozc_dictionary_bin "mozc_dictionary_embedded.bin";
+japanese_transliterator        "translit_android.far";
+lexicon                        "compressed_lexicon_ja_jp.blex";
+patts1_phonology               "phonology.cfg";
+phoneme_hmm_linguistic_features "phoneme_hmm.params";
+phonology                      "phonology.pb";
+rewrite_fst                    "rewrite_android.far";
+serialization_spec             "ja_verbalize_spec.pb";
+textnorm_params                "textnorm_params.pb";
+tokenize                       "tokenize_ja_android.far";
+verbalize                      "verbalize_android.far";
+modules                        "rewrite_simple japanese_tokenizer_mozc classify_kestrel japanese_transliterator verbalize_kestrel japanese_number_suffix_word_modifier japanese_accent_modifier japanese_pronounce2 add_specification hmm";
+

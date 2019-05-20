@@ -1,0 +1,23 @@
+
+
+on fs
+    chown self_check self_check /diagapp
+    chmod 0770 /diagapp
+    mkdir /diagapp/selfchecklog
+    chown self_check self_check /diagapp/selfchecklog
+    chmod 0770 /diagapp/selfchecklog
+    mkdir /diagapp/selfchecksum
+    chown self_check self_check /diagapp/selfchecksum
+    chmod 0770 /diagapp/selfchecksum
+
+on post-fs-data
+    symlink /diagapp /data/diagapp
+
+service selfcheckserver /system/bin/selfcheckserver
+    class main
+    socket selfcheck_sock stream 660 root self_check
+    user root
+    group self_check
+
+
+

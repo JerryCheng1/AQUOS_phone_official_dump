@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<default-permissions>
+<item
+    packagename="com.kddi.android.email"
+    systemfixed="false">
+    <permission name="android.permission.READ_PHONE_STATE" />
+    <permission name="android.permission.RECEIVE_SMS" />
+    <permission name="android.permission.RECEIVE_MMS" />
+</item>
+<item
+    packagename="com.kddi.pass.launcher"
+    systemfixed="false">
+    <permission name="android.permission.GET_ACCOUNTS" />
+</item>
+<item
+    packagename="com.kddi.market"
+    systemfixed="false">
+    <permission name="android.permission.READ_PHONE_STATE" />
+</item>
+<item
+    packagename="com.kddi.android.lismobookstore"
+    systemfixed="false">
+    <permission name="android.permission.GET_ACCOUNTS" />
+</item>
+<item
+    packagename="com.kddi.android.videopass"
+    systemfixed="false">
+    <permission name="android.permission.GET_ACCOUNTS" />
+    <permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <permission name="android.permission.READ_PHONE_STATE" />
+</item>
+<item
+    packagename="web.wm.auone.jp"
+    systemfixed="false">
+    <permission name="android.permission.GET_ACCOUNTS" />
+</item>
+<item
+    packagename="com.kddi.android.AddressbookPlus"
+    systemfixed="false">
+    <permission name="android.permission.CALL_PHONE" />
+    <permission name="android.permission.READ_CALL_LOG" />
+    <permission name="android.permission.WRITE_CALL_LOG" />
+</item>
+<item
+    packagename="com.kddi.android.klop"
+    systemfixed="false">
+    <permission name="android.permission.ACCESS_FINE_LOCATION" />
+    <permission name="android.permission.ACCESS_COARSE_LOCATION" />
+    <permission name="android.permission.READ_PHONE_STATE" />
+</item>
+<item
+    packagename="com.kddi.android.evc"
+    systemfixed="false">
+    <permission name="android.permission.READ_PHONE_STATE" />
+    <permission name="android.permission.CALL_PHONE" />
+    <permission name="android.permission.READ_CONTACTS" />
+    <permission name="android.permission.GET_ACCOUNTS" />
+</item>
+<item
+    packagename="com.kddi.android.ausharelink"
+    systemfixed="false">
+    <permission name="android.permission.ACCESS_FINE_LOCATION" />
+    <permission name="android.permission.READ_PHONE_STATE" />
+    <permission name="android.permission.READ_CONTACTS" />
+</item>
+<item
+    packagename="com.kddi.disasterapp"
+    systemfixed="true">
+    <permission name="android.permission.RECEIVE_SMS" />
+    <permission name="android.permission.READ_PHONE_STATE" />
+</item>
+<item
+    packagename="com.kddi.android.checker_android"
+    systemfixed="false">
+    <permission name="android.permission.ACCESS_FINE_LOCATION" />
+    <permission name="android.permission.ACCESS_COARSE_LOCATION" />
+    <permission name="android.permission.READ_PHONE_STATE" />
+    <permission name="android.permission.PROCESS_OUTGOING_CALLS" />
+</item>
+<item
+    packagename="jp.auone.wallet"
+    systemfixed="false">
+    <permission name="android.permission.GET_ACCOUNTS" />
+</item>
+<item
+    packagename="com.kddi.android.au_wifi_connect2"
+    systemfixed="false">
+    <permission name="android.permission.ACCESS_FINE_LOCATION" />
+    <permission name="android.permission.ACCESS_COARSE_LOCATION" />
+    <permission name="android.permission.READ_PHONE_STATE" />
+</item>
+<item
+    packagename="com.redbend.shclient"
+    systemfixed="false">
+    <permission name="android.permission.RECEIVE_WAP_PUSH" />
+    <permission name="android.permission.RECEIVE_SMS" />
+    <permission name="android.permission.ACCESS_COARSE_LOCATION" />
+    <permission name="android.permission.ACCESS_FINE_LOCATION" />
+    <permission name="android.permission.READ_PHONE_STATE" />
+</item>
+<item
+    packagename="jp.co.sharp.android.felicalockcontrol"
+    systemfixed="false">
+    <permission name="android.permission.READ_PHONE_STATE" />
+</item>
+<item
+    packagename="jp.co.sharp.android.porthole"
+    systemfixed="false">
+    <permission name="android.permission.READ_PHONE_STATE" />
+    <permission name="android.permission.CALL_PHONE" />
+</item>
+<item
+    packagename="jp.co.sharp.android.camera"
+    systemfixed="false">
+    <permission name="android.permission.READ_PHONE_STATE" />
+</item>
+<item
+    packagename="jp.co.sharp.android.SHWirelessOutput"
+    systemfixed="false">
+    <permission name="android.permission.READ_PHONE_STATE" />
+</item>
+<item
+    packagename="jp.co.sharp.android.feeluxhome"
+    systemfixed="false">
+    <permission name="android.permission.CALL_PHONE" />
+    <permission name="android.permission.READ_PHONE_STATE" />
+    <permission name="android.permission.READ_CALL_LOG" />
+    <permission name="android.permission.WRITE_CALL_LOG" />
+</item>
+</default-permissions>
